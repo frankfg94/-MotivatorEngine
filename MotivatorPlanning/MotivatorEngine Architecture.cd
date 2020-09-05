@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MotivatorEngine.Task">
+    <Position X="6" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAAAASTAACBAEoAEAACAYGAggAASEAiIhQBAggTEGKA=</HashCode>
+      <FileName>Tasks\Task.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MotivatorEngine.Week">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAEAAEQA=</HashCode>
+      <FileName>Week.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MotivatorEngine.Day">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAEAAACAAAQAIACBAAAAEAAAAAkEAAAAAIAAQQA=</HashCode>
+      <FileName>Day.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MotivatorEngine.Planning">
+    <Position X="4.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgCAifShACsEgRAAoWhIICSEkADEIgRAAGACAgRhACQ=</HashCode>
+      <FileName>Planning.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MotivatorEngine.PreTask.PreMenu">
+    <Position X="10" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAgAACACAQAAAAACEGAAQAAAAIAAAAAAAAAAAEIAAA=</HashCode>
+      <FileName>PreTask\PreMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

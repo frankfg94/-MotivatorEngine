@@ -1,0 +1,15 @@
+C:\Users\franc\source\repos\MotivatorPlanning\MotivatorPlanning\bin\Debug\netcoreapp3.1\MotivatorEngine.deps.json
+C:\Users\franc\source\repos\MotivatorPlanning\MotivatorPlanning\bin\Debug\netcoreapp3.1\MotivatorEngine.dll
+C:\Users\franc\source\repos\MotivatorPlanning\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.csprojAssemblyReference.cache
+C:\Users\franc\source\repos\MotivatorPlanning\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.AssemblyInfoInputs.cache
+C:\Users\franc\source\repos\MotivatorPlanning\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.AssemblyInfo.cs
+C:\Users\franc\source\repos\MotivatorPlanning\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.csproj.CoreCompileInputs.cache
+C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanning\bin\Debug\netcoreapp3.1\MotivatorEngine.deps.json
+C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanning\bin\Debug\netcoreapp3.1\MotivatorEngine.dll
+C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanning\bin\Debug\netcoreapp3.1\MotivatorEngine.pdb
+C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.AssemblyInfoInputs.cache
+C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.AssemblyInfo.cs
+C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.csproj.CoreCompileInputs.cache
+C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.dll
+C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.pdb
+C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.csprojAssemblyReference.cache

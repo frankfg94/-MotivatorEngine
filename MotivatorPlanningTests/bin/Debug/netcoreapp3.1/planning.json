@@ -1,0 +1,165 @@
+{
+  "preMenu": {
+    "availableChoices": [
+      {
+        "$type": "MotivatorEngine.PreTask.Choices.GiveupChoice, MotivatorEngine",
+        "abandonConfirmText": "I want to give up and i am sure of it, 100%",
+        "showBeforeDay": true,
+        "count": 999,
+        "maxCount": 999,
+        "refillOptions": null
+      }
+    ],
+    "refillEnabled": true,
+    "freeRefillEnabled": true
+  },
+  "saveSettings": null,
+  "name": "unnamed planning",
+  "canShrink": true,
+  "autofinishWhenNoTasks": true,
+  "description": "This is a mock planning generated for testing only",
+  "isFinished": true,
+  "lastFinishDate": "2020-09-02T20:07:23.6108249+02:00",
+  "weeks": [
+    {
+      "description": null,
+      "optionnal": false,
+      "days": [
+        {
+          "description": null,
+          "canSkip": true,
+          "hasSkip": false,
+          "canFreemode": false,
+          "hasFreemode": false,
+          "newWeek": false,
+          "estimatedDuration": "00:00:00"
+        },
+        {
+          "description": null,
+          "canSkip": true,
+          "hasSkip": false,
+          "canFreemode": false,
+          "hasFreemode": false,
+          "newWeek": false,
+          "estimatedDuration": "00:00:00"
+        },
+        {
+          "description": null,
+          "canSkip": true,
+          "hasSkip": false,
+          "canFreemode": false,
+          "hasFreemode": false,
+          "newWeek": false,
+          "estimatedDuration": "00:00:00"
+        },
+        {
+          "description": null,
+          "canSkip": true,
+          "hasSkip": false,
+          "canFreemode": false,
+          "hasFreemode": false,
+          "newWeek": false,
+          "estimatedDuration": "00:00:00"
+        },
+        {
+          "description": null,
+          "canSkip": true,
+          "hasSkip": false,
+          "canFreemode": false,
+          "hasFreemode": false,
+          "newWeek": false,
+          "estimatedDuration": "00:00:00"
+        },
+        {
+          "description": null,
+          "canSkip": true,
+          "hasSkip": false,
+          "canFreemode": false,
+          "hasFreemode": false,
+          "newWeek": false,
+          "estimatedDuration": "00:00:00"
+        },
+        {
+          "description": null,
+          "canSkip": true,
+          "hasSkip": false,
+          "canFreemode": false,
+          "hasFreemode": false,
+          "newWeek": false,
+          "estimatedDuration": "00:00:00"
+        }
+      ]
+    },
+    {
+      "description": null,
+      "optionnal": false,
+      "days": [
+        {
+          "description": null,
+          "canSkip": true,
+          "hasSkip": false,
+          "canFreemode": false,
+          "hasFreemode": false,
+          "newWeek": false,
+          "estimatedDuration": "00:00:00"
+        },
+        {
+          "description": null,
+          "canSkip": true,
+          "hasSkip": false,
+          "canFreemode": false,
+          "hasFreemode": false,
+          "newWeek": false,
+          "estimatedDuration": "00:00:00"
+        },
+        {
+          "description": null,
+          "canSkip": true,
+          "hasSkip": false,
+          "canFreemode": false,
+          "hasFreemode": false,
+          "newWeek": false,
+          "estimatedDuration": "00:00:00"
+        },
+        {
+          "description": null,
+          "canSkip": true,
+          "hasSkip": false,
+          "canFreemode": false,
+          "hasFreemode": false,
+          "newWeek": false,
+          "estimatedDuration": "00:00:00"
+        },
+        {
+          "description": null,
+          "canSkip": true,
+          "hasSkip": false,
+          "canFreemode": false,
+          "hasFreemode": false,
+          "newWeek": false,
+          "estimatedDuration": "00:00:00"
+        },
+        {
+          "description": null,
+          "canSkip": true,
+          "hasSkip": false,
+          "canFreemode": false,
+          "hasFreemode": false,
+          "newWeek": false,
+          "estimatedDuration": "00:00:00"
+        },
+        {
+          "description": null,
+          "canSkip": true,
+          "hasSkip": false,
+          "canFreemode": false,
+          "hasFreemode": false,
+          "newWeek": false,
+          "estimatedDuration": "00:00:00"
+        }
+      ]
+    }
+  ],
+  "currentDayIndex": 13,
+  "testingPath": "C:\\Users\\franc\\source\\repos\\MotivatorEngine\\MotivatorPlanningTests\\bin\\Debug\\netcoreapp3.1\\planning.json"
+}
