@@ -22,7 +22,8 @@ namespace MotivatorEngine
             }
             else if (days.Count != 7)
             {
-                throw new ArgumentException("A week must have 7 days, even if they are empty for more clarity, count is :" + days.Count);
+                Console.WriteLine("(!) Warning day count is not 7 for new week, found :" + 7);
+                // throw new ArgumentException("A week must have 7 days, even if they are empty for more clarity, count is :" + days.Count);
             }
             this.days = days;
         }

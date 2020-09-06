@@ -47,17 +47,18 @@ namespace MotivatorEngine.PreTask
             return IsSelectable() && showBeforeTask;
         }
 
-        public void Use(Day d, Task t)
+        public void Use(ref Day d, Task t)
         {
             preMenu.OnBeforeUseChoice(this);
             if (preMenu.enabled)
             {
                 isSelected = false;
-                _Use(d,t,out bool cancelUse);
+                _Use(ref d,t,out bool cancelUse);
                 if (!cancelUse)
                 {
                     count--;
                 }
+                
             }
             else
             {
@@ -65,8 +66,14 @@ namespace MotivatorEngine.PreTask
             }
             preMenu.OnAfterUseChoice(this);
         }
-
-        protected abstract void _Use(Day d, Task t, out bool cancelUse);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="d"></param>
+        /// <param name="t"></param>
+        /// <param name="cancelUse"></param>
+        /// <param name="newDay">Override the current day with a new day (used for postponing)</param>
+        protected abstract void _Use(ref Day d, Task t, out bool cancelUse);
         public bool ShowBeforeTask()
         {
             return showBeforeTask;

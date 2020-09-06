@@ -20,7 +20,7 @@ namespace MotivatorEngine
             return AskConfirmation();
         }
 
-        public override PreMenu AskPreDayMenu(Day day)
+        public override PreMenu AskPreDayMenu(ref Day day)
         {
             var choices = preMenu.availableChoices.FindAll(x => x.count > 0 && x.ShowBeforeDay());
             if (choices.Count == 0)
@@ -30,46 +30,43 @@ namespace MotivatorEngine
             }
 
             int selectedChoice = -1;
-            while (true)
+
+            Console.WriteLine("\n////////////Pre day menu////////////////");
+            Console.WriteLine("This menu allows you to choose some options before starting the planning");
+            var taskCount = (day.tasks != null) ? day.tasks.Count : 0;
+            Roadmap r = new Roadmap(this);
+            r.PrintRoadmap();
+            int curIndex = 1;
+            foreach (var choice in choices)
             {
-                Console.WriteLine("\n////////////Pre day menu////////////////");
-                Console.WriteLine("This menu allows you to choose some options before starting the planning");
-                var taskCount =  (day.tasks != null) ? day.tasks.Count : 0;
-                Roadmap r = new Roadmap(this);
-                r.PrintRoadmapDay(day);
-                int curIndex = 1;
-                foreach (var choice in choices)
+                if (choice.IsSelectable())
                 {
-                    if (choice.IsSelectable())
-                    {
-                        Console.WriteLine(curIndex + ")\t" + choice.GetName() + $" {choice.count}/{choice.maxCount}");
-                    }
-                    else
-                    {
-                        Console.WriteLine("[Consumed]\t" + choice.GetName());
-                    }
-                    curIndex++;
-                }
-                int quitChoice = curIndex;
-                Console.WriteLine(quitChoice + ")\tClose the menu and continue");
-                selectedChoice = SecureIntInput(1, curIndex, "Choose your option before starting the day");
-                if (selectedChoice != quitChoice)
-                {
-                    Console.WriteLine("Using choice ...");
-                    if (preMenu.availableChoices[selectedChoice - 1].IsSelectable())
-                    {
-                        preMenu.availableChoices[selectedChoice-1].Use(day, null);
-                    }
-                    else
-                    {
-                        Console.WriteLine("This feature cannot be used at the moment, try something else");
-                    }
+                    Console.WriteLine(curIndex + ")\t" + choice.GetName() + $" {choice.count}/{choice.maxCount}");
                 }
                 else
                 {
-                    return preMenu;
+                    Console.WriteLine("[Consumed]\t" + choice.GetName());
+                }
+                curIndex++;
+            }
+            int quitChoice = curIndex;
+            Console.WriteLine(quitChoice + ")\tClose the menu and continue");
+            selectedChoice = SecureIntInput(1, curIndex, "Choose your option before starting the day");
+            if (selectedChoice != quitChoice)
+            {
+                Console.WriteLine("Using choice ...");
+                if (choices[selectedChoice - 1].IsSelectable())
+                {
+                    choices[selectedChoice - 1].Use(ref day, null);
+                    AskPreDayMenu(ref day);
+                }
+                else
+                {
+                    Console.WriteLine("This feature cannot be used at the moment, try something else");
+                    AskPreDayMenu(ref day);
                 }
             }
+            return preMenu;
         }
 
         private int SecureIntInput(int min, int max, string chooseOptionText)
@@ -95,7 +92,7 @@ namespace MotivatorEngine
             }
         }
 
-        public override PreMenu AskPreTaskMenu(Day d, Task t)
+        public override PreMenu AskPreTaskMenu(ref Day d, Task t)
         {
             var choices = preMenu.availableChoices.FindAll(x => x.count > 0 && x.ShowBeforeTask());
             if (choices.Count == 0)
@@ -105,38 +102,33 @@ namespace MotivatorEngine
             }
 
             int selectedChoice = -1;
-            while (true)
+            Console.WriteLine("\n//////////////Pre Task menu////////////////");
+            Console.WriteLine("This menu allows you to choose some options before starting the planning");
+            int curIndex = 1;
+            Roadmap r = new Roadmap(this);
+            r.PrintRoadmapDay(d);
+            foreach (var choice in choices)
             {
-                Console.WriteLine("\n//////////////Pre Task menu////////////////");
-                Console.WriteLine("This menu allows you to choose some options before starting the planning");
-                int curIndex = 1;
-                Roadmap r = new Roadmap(this);
-                r.PrintRoadmapDay(d);
-                foreach (var choice in choices)
+                if (choice.IsSelectable())
                 {
-                    if (choice.IsSelectable())
-                    {
-                        Console.WriteLine(curIndex + ")\t" + choice.GetName() + $" {choice.count}/{choice.maxCount}");
-                    }
-                    else
-                    {
-                        Console.WriteLine("[Consumed]\t" + choice.GetName());
-                    }
-                    curIndex++;
-                }
-                int quitChoice = curIndex;
-                Console.WriteLine(quitChoice + ")\tClose the menu and continue");
-                selectedChoice = SecureIntInput(1, curIndex, "Choose your option before starting the Task : " + t.Infos.name);
-                if (selectedChoice != quitChoice)
-                {
-                    Console.WriteLine("Using choice ...");
-                    preMenu.availableChoices[selectedChoice - 1].Use(d, t);
+                    Console.WriteLine(curIndex + ")\t" + choice.GetName() + $" {choice.count}/{choice.maxCount}");
                 }
                 else
                 {
-                    return preMenu;
+                    Console.WriteLine("[Consumed]\t" + choice.GetName());
                 }
+                curIndex++;
             }
+            int quitChoice = curIndex;
+            Console.WriteLine(quitChoice + ")\tClose the menu and continue");
+            selectedChoice = SecureIntInput(1, curIndex, "Choose your option before starting the Task : " + t.Infos.name);
+            if (selectedChoice != quitChoice)
+            {
+                Console.WriteLine("Using choice ...");
+                preMenu.availableChoices[selectedChoice - 1].Use(ref d, t);
+                AskPreTaskMenu(ref d, t);
+            }
+            return preMenu;
         }
 
         public override Task AskTaskToDo(Day day, Task plannedTask)
@@ -145,11 +137,11 @@ namespace MotivatorEngine
             var tasksToDo = day.tasks.FindAll(x => !x.IsFinished);
             foreach (var t in tasksToDo)
             {
-                Console.Write($"\n{curTaskIndex+1} | Task Name : {t.Infos.name}");
-                if(plannedTask != null && plannedTask == t)
+                Console.Write($"\n{curTaskIndex + 1} | Task Name : {t.Infos.name}");
+                if (plannedTask != null && plannedTask == t)
                 {
                     Console.Write($" [Selected]");
-                } 
+                }
                 Console.Write("\n");
                 Console.WriteLine($"\t| Difficulty\t:\t {t.Infos.difficultyLvl}/5");
                 Console.WriteLine($"\t| Duration\t:\t {t.EstimatedDuration}");
@@ -161,7 +153,7 @@ namespace MotivatorEngine
             if (chosenTaskIndex != cancelChoice)
             {
                 Console.WriteLine("Using choice ...");
-                return tasksToDo[chosenTaskIndex-1];
+                return tasksToDo[chosenTaskIndex - 1];
             }
             else
             {

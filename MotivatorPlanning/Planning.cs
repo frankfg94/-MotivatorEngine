@@ -24,14 +24,14 @@ namespace MotivatorEngine
         public const bool LOG_SAVE = false;
         // We are using the weeks only for loading / saving for more simplicity
 
-        public abstract PreMenu AskPreDayMenu(Day day);
+        public abstract PreMenu AskPreDayMenu(ref Day day);
 
         /// <summary>
         /// Ask a menu, return it when all choices are made
         /// </summary>
         /// <param name="d"></param>
         /// <returns></returns>
-        public abstract PreMenu AskPreTaskMenu(Day d, Task taskToDo);
+        public abstract PreMenu AskPreTaskMenu(ref Day d, Task taskToDo);
         public abstract bool AskToTypeAbandonConfirmText(Day d);
         public abstract bool AskConfirmation();
 
@@ -371,10 +371,10 @@ namespace MotivatorEngine
             var curDay = GetCurrentDay();
 
             // Start the pre task menu
-            this.preMenu = AskPreDayMenu(curDay);
+            this.preMenu = AskPreDayMenu(ref curDay);
             Save();
 
-            // Start the first task if not free mode
+            // Start the task recursive call
             DoAllTasks(curDay);
 
             // Planning finished event, handled outside the library
@@ -425,7 +425,7 @@ namespace MotivatorEngine
                     {
                         taskToDo = day.GetNextTaskToDo();
                     }
-                    preMenu = AskPreTaskMenu(day,taskToDo);
+                    preMenu = AskPreTaskMenu(ref day,taskToDo);
                     taskToDo.TaskFinished += (s, e) =>
                     {
                         Save();

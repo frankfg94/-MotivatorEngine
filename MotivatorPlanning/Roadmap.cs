@@ -14,9 +14,15 @@ namespace MotivatorEngine
             this.planning = p;
         }
 
+        public void PrintRoadmapCurrentDay()
+        {
+            PrintRoadmapDay(planning.GetCurrentDay());
+        }
+
         public void PrintRoadmapDay(Day d)
         {
             Console.WriteLine( "======== Day Roadmap ===========");
+            Console.WriteLine($"| Day\t\t: {planning.currentDayIndex+1}/{planning.GetDays().Count}");
             Console.WriteLine($"| Description\t: {d.description ?? "Empty"}");
             Console.WriteLine($"| Difficulty\t: {d.GetEstimatedDifficulty()}");
             Console.WriteLine($"| Duration\t:{d.GetTotalDuration()}");

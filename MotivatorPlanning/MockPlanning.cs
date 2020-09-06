@@ -18,13 +18,13 @@ namespace MotivatorEngine
             return true;
         }
 
-        public override PreMenu AskPreDayMenu(Day day)
+        public override PreMenu AskPreDayMenu(ref Day day)
         {
             Console.WriteLine("[IA] Selecting the menu options for the day...");
             return preMenu;
         }
 
-        public override PreMenu AskPreTaskMenu(Day d, Task t)
+        public override PreMenu AskPreTaskMenu(ref Day d, Task t)
         {
             Console.WriteLine("[IA] Selecting the options for the task..." + (d.tasks.FindAll(t => t.IsFinished).Count+1) + "/" + d.tasks.Count);
             return preMenu;

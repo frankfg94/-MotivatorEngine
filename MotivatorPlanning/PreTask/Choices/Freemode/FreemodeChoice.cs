@@ -14,6 +14,8 @@ namespace MotivatorEngine.PreTask
                 difficultyRefill = true,
                 timeConsumingRefill= true
             };
+            showBeforeTask = true;
+            showBeforeDay = false;
         }
 
         public override bool IsSelectable()
@@ -29,7 +31,7 @@ namespace MotivatorEngine.PreTask
             // We need at least two tasks to use freemode, to choose between the two tasks
             return base.IsSelectable() && atLeastTwoTasks;
         }
-        protected override void _Use(Day d, Task t, out bool cancel)
+        protected override void _Use(ref Day d, Task t, out bool cancel)
         {
             // Ask to select a task in the planning implementation
             t = preMenu.planning.AskTaskToDo(d,t);

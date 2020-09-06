@@ -26,7 +26,7 @@ namespace MotivatorEngine.PreTask
             return "Skip the Task";
         }
 
-        protected override void _Use(Day d, Task t, out bool cancelUse)
+        protected override void _Use(ref Day d, Task t, out bool cancelUse)
         {
             if(t != null)
             {

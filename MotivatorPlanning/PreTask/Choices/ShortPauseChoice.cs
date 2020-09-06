@@ -8,7 +8,11 @@ namespace MotivatorEngine.PreTask
     {
         public List<Delayer> delayers;
 
-
+        public ShortPauseChoice()
+        {
+            showBeforeDay = true;
+            showBeforeTask = true;
+        }
 
         public override string GetDescription()
         {
@@ -20,7 +24,7 @@ namespace MotivatorEngine.PreTask
             throw new NotImplementedException();
         }
 
-        protected override void _Use(Day d, Task t, out bool cancel)
+        protected override void _Use(ref Day d, Task t, out bool cancel)
         {
             throw new NotImplementedException();
         }

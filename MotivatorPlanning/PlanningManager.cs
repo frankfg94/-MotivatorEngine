@@ -64,11 +64,12 @@ namespace MotivatorEngine
                 for (int i = 0; i < p.GetWeekCount(); i++)
                 {
                     var days = new List<Day>();
-                    for (int j = 0; j < 7; j++)
+                    for (int j=0; j < 7 && dayIndex < allDays.Count; j++)
                     {
                         days.Add(allDays[dayIndex]);
                         dayIndex++;
                     }
+                    // If the week is not complete, fill it with empty days
                     p.weeks.Add(new Week(days));
                }
             } else

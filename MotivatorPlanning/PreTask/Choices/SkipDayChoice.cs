@@ -9,8 +9,12 @@ namespace MotivatorEngine.PreTask
         public int canEnableIfLongThreesholdMilliseconds = 60 * 1000;
         public bool enableSkipTaskIfDifficult = true;
 
-
-
+        public SkipDayChoice()
+        {
+            showBeforeDay = true;
+            showBeforeTask = true;
+        }
+        
         public override string GetDescription()
         {
             return "Skip the current day and all its tasks";
@@ -48,7 +52,7 @@ namespace MotivatorEngine.PreTask
             }
         }
 
-        protected override void _Use(Day d, Task t, out bool cancelUse)
+        protected override void _Use(ref Day d, Task t, out bool cancelUse)
         {
             d.tasks.ForEach(delegate(Task t)
             {

@@ -112,7 +112,7 @@ namespace MotivatorEngine.PreTask
                 }
                 else
                 {
-                    Console.WriteLine("Didn't propose the freemode because this day doesn't have tasks");
+                    Console.WriteLine("Didn't propose the freemode because this Day doesn't have tasks");
                 }
             }
             */

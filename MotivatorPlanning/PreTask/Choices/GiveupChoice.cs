@@ -8,6 +8,12 @@ namespace MotivatorEngine.PreTask.Choices
     {
         public string abandonConfirmText = "I want to give up and i am sure of it, 100%";
 
+        public GiveupChoice()
+        {
+            showBeforeDay = true;
+            showBeforeTask = true;
+        }
+
         public override string GetDescription()
         {
             return "You can abandon the planning at any moment";
@@ -18,7 +24,7 @@ namespace MotivatorEngine.PreTask.Choices
             return "Give Up";
         }
 
-        protected override void _Use(Day d, Task t, out bool cancel)
+        protected override void _Use(ref Day d, Task t, out bool cancel)
         {
             if (preMenu.planning.AskToTypeAbandonConfirmText(d))
             {

@@ -134,6 +134,7 @@ namespace MotivatorEngine.Tests
                     }
                 )
             });
+            Console.WriteLine("Before decal\n"+p);
             var curDayBeforeDecal = 0;
             // At first its normal that the day isn't as pos 1, its pos 0
             Assert.AreNotEqual(p.GetDays()[1], dayToDecal);
@@ -145,6 +146,77 @@ namespace MotivatorEngine.Tests
             // Verify that the week is unchanged
             // Check If the task is still available, it should be available because we didn't cancel the task, we posponed it
             Assert.IsTrue(p.GetNextPlannedTask() != null);
+            Console.WriteLine("After decal\n" + p);
+        }
+
+        [TestMethod()]
+        public void DecalDaySaveTest()
+        {
+            var p = new MockPlanning();
+            var firstTask = new MockTask();
+            var secondTask = new MockTask();
+            var dayToDecal = new Day(new List<Task> { firstTask });
+            p.SetContent(new List<Week>
+                    {
+                        new Week(new List<Day>{
+                        dayToDecal,
+                        new Day(),
+                        new Day(),
+                        new Day(),
+                        new Day(),
+                        new Day(),
+                        new Day(),
+                        }),
+                        new Week(new List<Day>{
+                        new Day( new List<Task> { secondTask, new MockTask() } ),
+                        new Day(),
+                        new Day(),
+                        new Day(),
+                        new Day(),
+                        new Day(),
+                        new Day( new List<Task> { new MockTask()} ),
+                        })
+                    });
+            Console.WriteLine("Before decal\n" + p);
+            p.Save();
+            p.DecalDay(dayToDecal);
+            p.Save();
+            Console.WriteLine("After decal\n" + p);
+        }
+
+        [TestMethod()]
+        public void DecalWeekSaveTest()
+        {
+            var p = new MockPlanning();
+            var firstTask = new MockTask();
+            var secondTask = new MockTask();
+            var dayToDecal = new Day(new List<Task> { firstTask });
+            p.SetContent(new List<Week>
+                    {
+                        new Week(new List<Day>{
+                        dayToDecal,
+                        new Day(),
+                        new Day(),
+                        new Day(),
+                        new Day(),
+                        new Day(),
+                        new Day(),
+                        }),
+                        new Week(new List<Day>{
+                        new Day( new List<Task> { secondTask, new MockTask() } ),
+                        new Day(),
+                        new Day(),
+                        new Day(),
+                        new Day(),
+                        new Day(),
+                        new Day( new List<Task> { new MockTask()} ),
+                        })
+                    });
+            Console.WriteLine("Before decal\n" + p);
+            p.Save();
+            p.DecalWeek(dayToDecal);
+            p.Save();
+            Console.WriteLine("After decal\n" + p);
         }
 
         [TestMethod()]
@@ -184,6 +256,7 @@ namespace MotivatorEngine.Tests
             // Verify that the week is unchanged
             // Check If the task is still available, it should be available because we didn't cancel the task, we posponed it
             Assert.IsTrue(p.GetNextPlannedTask() != null);
+            Console.WriteLine("After decal\n" + p);
         }
 
         [TestMethod()]
