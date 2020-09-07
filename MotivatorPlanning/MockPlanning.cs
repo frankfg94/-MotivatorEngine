@@ -12,9 +12,9 @@ namespace MotivatorEngine
             description = "This is a mock planning generated for testing only";
         }
 
-        public override bool AskConfirmation()
+        public override bool AskConfirmation(string text)
         {
-            Console.WriteLine("[IA] I'm asked for confirming an input, i say yes");
+            Console.WriteLine($"[IA] I'm asked for confirming an input ({text}), i say yes");
             return true;
         }
 

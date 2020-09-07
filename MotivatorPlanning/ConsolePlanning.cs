@@ -5,9 +5,9 @@ namespace MotivatorEngine
 {
     public class ConsolePlanning : MockPlanning
     {
-        public override bool AskConfirmation()
+        public override bool AskConfirmation(string msg)
         {
-            Console.WriteLine("Do you want to confirm this choice ? (y/n) ");
+            Console.WriteLine($"{msg} (y/n) ");
             var key = Console.ReadKey();
             if (key.KeyChar == 'y' || key.KeyChar == 'Y')
             {
@@ -17,7 +17,7 @@ namespace MotivatorEngine
             {
                 return false;
             }
-            return AskConfirmation();
+            return AskConfirmation(msg);
         }
 
         public override PreMenu AskPreDayMenu(ref Day day)
@@ -39,13 +39,14 @@ namespace MotivatorEngine
             int curIndex = 1;
             foreach (var choice in choices)
             {
-                if (choice.IsSelectable())
+                if (choice.IsSelectable(out string msg))
                 {
                     Console.WriteLine(curIndex + ")\t" + choice.GetName() + $" {choice.count}/{choice.maxCount}");
                 }
                 else
                 {
-                    Console.WriteLine("[Consumed]\t" + choice.GetName());
+                    Console.WriteLine("[Locked]\t" + choice.GetName());
+                    Console.WriteLine("\t\t|\t"+msg);
                 }
                 curIndex++;
             }
@@ -55,14 +56,14 @@ namespace MotivatorEngine
             if (selectedChoice != quitChoice)
             {
                 Console.WriteLine("Using choice ...");
-                if (choices[selectedChoice - 1].IsSelectable())
+                if (choices[selectedChoice - 1].IsSelectable(out string errorMsg))
                 {
                     choices[selectedChoice - 1].Use(ref day, null);
                     AskPreDayMenu(ref day);
                 }
                 else
                 {
-                    Console.WriteLine("This feature cannot be used at the moment, try something else");
+                    Console.WriteLine("This feature cannot be used at the moment, try something else :\n" + errorMsg);
                     AskPreDayMenu(ref day);
                 }
             }
@@ -109,13 +110,14 @@ namespace MotivatorEngine
             r.PrintRoadmapDay(d);
             foreach (var choice in choices)
             {
-                if (choice.IsSelectable())
+                if (choice.IsSelectable(out string msg))
                 {
                     Console.WriteLine(curIndex + ")\t" + choice.GetName() + $" {choice.count}/{choice.maxCount}");
                 }
                 else
                 {
-                    Console.WriteLine("[Consumed]\t" + choice.GetName());
+                    Console.WriteLine("[Locked]\t" + choice.GetName());
+                    Console.WriteLine("\t|\t" + msg);
                 }
                 curIndex++;
             }
@@ -175,8 +177,7 @@ namespace MotivatorEngine
             }
             string hellText = "#[`FSD73Q5Q/¨op£*¤èé'(è_fdsfxghaq.+!²&";
             hellText = "a";
-            Console.WriteLine("///// Are you sure you want to abandon the planning ? ////");
-            if (AskConfirmation())
+            if (AskConfirmation("///// Are you sure you want to abandon the planning ? ////"))
             {
                 Console.WriteLine("Type the following text to abandon the planning, this is not undoable : ");
                 Console.WriteLine("\t\t" + hellText);

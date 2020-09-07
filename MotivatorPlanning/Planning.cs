@@ -3,8 +3,6 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
-using System.Timers;
 using Timer = System.Timers.Timer;
 
 namespace MotivatorEngine
@@ -12,7 +10,7 @@ namespace MotivatorEngine
     public class DayArg : EventArgs
     {
         public Day day;
-        public DateTime finishTime;
+        public DateTime time;
     }
 
 
@@ -33,7 +31,7 @@ namespace MotivatorEngine
         /// <returns></returns>
         public abstract PreMenu AskPreTaskMenu(ref Day d, Task taskToDo);
         public abstract bool AskToTypeAbandonConfirmText(Day d);
-        public abstract bool AskConfirmation();
+        public abstract bool AskConfirmation(string v = "");
 
         /// <summary>
         /// Get the time before a new day is started after all tasks are finished
@@ -85,7 +83,8 @@ namespace MotivatorEngine
         private bool handlersAdded = false;
         public readonly string testingPath = AppDomain.CurrentDomain.BaseDirectory + "planning.json";
         public event System.EventHandler PlanningFinished;
-        public event System.EventHandler DayFinished;
+        public event System.EventHandler<DayArg> DayFinished;
+        public event System.EventHandler<DayArg> DayStarted;
         public event System.EventHandler TaskFinished;
         public event System.EventHandler PlanningStarted;
         public event EventHandler TaskSkipped;
@@ -205,15 +204,26 @@ namespace MotivatorEngine
         /// <param name="startDay"></param>
         public void SkipDaysUntilTask(Day startDay)
         {
-            var posDay = allDays.IndexOf(startDay);
-            currentDayIndex = allDays.FindIndex(x => allDays.IndexOf(x) > posDay && x.tasks != null && x.tasks.Count > 0);
+            currentDayIndex = GetNextNonEmptyDayIndex(startDay);
             // Return null if the startDay was the last day with task
+        }
+
+        public int GetNextNonEmptyDayIndex(Day startDay)
+        { 
+            var posDay = allDays.IndexOf(startDay);
+            return allDays.FindIndex(x => allDays.IndexOf(x) > posDay && x.tasks != null && x.tasks.Count > 0);
+        }
+
+        public void OnDayStarted(Day day)
+        {
+            DayStarted?.Invoke(this,
+                         new DayArg { day = day, time = DateTime.Now });
         }
 
         public void OnDayFinished(Day day)
         {
             DayFinished?.Invoke(this,
-                new DayArg { day = day, finishTime = DateTime.Now });
+                new DayArg { day = day, time = DateTime.Now });
         }
 
         public void Save()
@@ -358,17 +368,18 @@ namespace MotivatorEngine
             {
                 //Console.WriteLine("Starting the planning");
             }
+            var curDay = GetCurrentDay();
             // Set the correct date
             if (IsBeginningNewDay())
             {
                 Console.WriteLine($">>>>>>>>>>>>>>>>>>>>> Beginning a new day : {currentDayIndex+1}/{allDays.Count}");
+                OnDayStarted(curDay);
             }
             Roadmap r = new Roadmap(this);
             r.PrintRoadmap();
             // Load all plugins if plugin system enabled
 
             // Start planning
-            var curDay = GetCurrentDay();
 
             // Start the pre task menu
             this.preMenu = AskPreDayMenu(ref curDay);
@@ -378,8 +389,6 @@ namespace MotivatorEngine
             DoAllTasks(curDay);
 
             // Planning finished event, handled outside the library
-            isFinished = true;
-            PlanningFinished?.Invoke(this, null);
         }
 
         private bool PremuEnabled()
@@ -549,6 +558,7 @@ namespace MotivatorEngine
         private void FinishSuccessfully()
         {
             lastFinishDate = DateTime.Now;
+            isFinished = true;
             PlanningFinished?.Invoke(this, null);
             if (LOG_INFOS)
             {

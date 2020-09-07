@@ -18,18 +18,26 @@ namespace MotivatorEngine.PreTask
             showBeforeDay = false;
         }
 
-        public override bool IsSelectable()
+        public override bool IsSelectable(out string msg)
         {
 
             var curDay = preMenu.planning.GetCurrentDay();
-            if(curDay.tasks == null)
+            if(curDay.tasks == null || curDay.isEmpty())
             {
+                msg = "We can't choose the task to start because the day doesn't have any";
                 return false;
             }
             var remainingTasks =  curDay.tasks.FindAll(x => !x.IsFinished);
             bool atLeastTwoTasks = remainingTasks.Count >= 2; // Check that there is at least two tasks to do
             // We need at least two tasks to use freemode, to choose between the two tasks
-            return base.IsSelectable() && atLeastTwoTasks;
+            
+            if(!atLeastTwoTasks)
+            {
+                msg = "No need to choose the task if you have 1 task only";
+                return false;
+            }
+
+            return base.IsSelectable(out msg)  ;
         }
         protected override void _Use(ref Day d, Task t, out bool cancel)
         {

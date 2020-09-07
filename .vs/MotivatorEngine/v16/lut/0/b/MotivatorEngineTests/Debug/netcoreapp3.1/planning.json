@@ -4,71 +4,9 @@
   "canShrink": true,
   "autofinishWhenNoTasks": true,
   "description": "This is a mock planning generated for testing only",
-  "isFinished": false,
-  "lastFinishDate": "0001-01-01T00:00:00",
+  "isFinished": true,
+  "lastFinishDate": "2020-09-06T21:48:08.5271321+02:00",
   "weeks": [
-    {
-      "description": null,
-      "optionnal": false,
-      "days": [
-        {
-          "description": null,
-          "canSkip": true,
-          "hasSkip": false,
-          "canFreemode": false,
-          "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
-        },
-        {
-          "description": null,
-          "canSkip": true,
-          "hasSkip": false,
-          "canFreemode": false,
-          "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
-        },
-        {
-          "description": null,
-          "canSkip": true,
-          "hasSkip": false,
-          "canFreemode": false,
-          "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
-        },
-        {
-          "description": null,
-          "canSkip": true,
-          "hasSkip": false,
-          "canFreemode": false,
-          "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
-        },
-        {
-          "description": null,
-          "canSkip": true,
-          "hasSkip": false,
-          "canFreemode": false,
-          "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
-        },
-        {
-          "description": null,
-          "canSkip": true,
-          "hasSkip": false,
-          "canFreemode": false,
-          "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
-        },
-        {
-          "description": null,
-          "canSkip": true,
-          "hasSkip": false,
-          "canFreemode": false,
-          "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
-        }
-      ]
-    },
     {
       "description": null,
       "optionnal": false,
@@ -194,6 +132,6 @@
       ]
     }
   ],
-  "currentDayIndex": 0,
+  "currentDayIndex": 13,
   "testingPath": "C:\\Users\\franc\\source\\repos\\MotivatorEngine\\.vs\\MotivatorEngine\\v16\\lut\\0\\t\\MotivatorEngineTests\\Debug\\netcoreapp3.1\\planning.json"
 }

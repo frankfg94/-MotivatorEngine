@@ -32,19 +32,22 @@ namespace MotivatorEngine.PreTask
             preMenu.OnAfterUseChoice(this);
         }
 
-        public virtual bool IsSelectable()
+        public virtual bool IsSelectable(out string cantSelectReason)
         {
+            cantSelectReason = "This feature is unavailble at the moment";
             return preMenu.enabled && count > 0;
         }
 
         public virtual bool IsSelectableBeforeDay()
         {
-            return IsSelectable() && showBeforeDay;
+            return true;
+           // return IsSelectable() && showBeforeDay;
         }
 
         public virtual bool IsSelectableBeforeTask()
         {
-            return IsSelectable() && showBeforeTask;
+            return true;
+            // return IsSelectable() && showBeforeTask;
         }
 
         public void Use(ref Day d, Task t)

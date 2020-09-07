@@ -25,6 +25,7 @@ namespace MotivatorEngine.PreTask.Choices
         protected override void _Use(ref Day d, Task t, out bool cancelUse)
         {
             preMenu.planning.DecalWeek(d);
+            d = preMenu.planning.GetCurrentDay();
             cancelUse = false;
         }
     }

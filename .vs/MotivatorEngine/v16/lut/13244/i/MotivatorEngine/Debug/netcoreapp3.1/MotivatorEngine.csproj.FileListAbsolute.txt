@@ -1,6 +1,0 @@
-C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\0\b\MotivatorEngine\Debug\netcoreapp3.1\MotivatorEngine.deps.json
-C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\0\b\MotivatorEngine\Debug\netcoreapp3.1\MotivatorEngine.dll
-C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\0\i\MotivatorEngine\Debug\netcoreapp3.1\MotivatorEngine.AssemblyInfoInputs.cache
-C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\0\i\MotivatorEngine\Debug\netcoreapp3.1\MotivatorEngine.AssemblyInfo.cs
-C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\0\i\MotivatorEngine\Debug\netcoreapp3.1\MotivatorEngine.csproj.CopyComplete
-C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\0\i\MotivatorEngine\Debug\netcoreapp3.1\MotivatorEngine.dll

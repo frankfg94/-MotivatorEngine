@@ -25,7 +25,7 @@ namespace MotivatorEngine.PreTask
             return "Skip the day";
         }
 
-        public override bool IsSelectable()
+        public override bool IsSelectable(out string msg)
         {
             var curDay = preMenu.planning.GetCurrentDay();
             if (curDay.canSkip)
@@ -34,20 +34,23 @@ namespace MotivatorEngine.PreTask
                 {
                     if(!curDay.AreAllTasksFinished())
                     {
-                        return true && base.IsSelectable();
+                        return true && base.IsSelectable(out msg);
                     }
                     else
                     {
+                        msg = "Don't need to skip, because the day is already finished";
                         return false;
                     }
                 }
                 else
                 {
+                    msg = "Don't need to skip, because the day has no tasks";
                     return false;
                 }
             }
             else
             {
+                msg = "Can't skip, because the day doesn't allow skipping at all";
                 return false;
             }
         }
