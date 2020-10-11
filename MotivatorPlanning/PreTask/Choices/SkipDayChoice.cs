@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MotivatorPluginCore;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,11 +14,12 @@ namespace MotivatorEngine.PreTask
         {
             showBeforeDay = true;
             showBeforeTask = true;
+            autoCloseMenuAfterUse = true;
         }
         
         public override string GetDescription()
         {
-            return "Skip the current day and all its tasks";
+            return "Skip the current day and all its AbstractTasks";
         }
 
         public override string GetName()
@@ -44,7 +46,7 @@ namespace MotivatorEngine.PreTask
                 }
                 else
                 {
-                    msg = "Don't need to skip, because the day has no tasks";
+                    msg = "Don't need to skip, because the day has no AbstractTasks";
                     return false;
                 }
             }
@@ -55,9 +57,9 @@ namespace MotivatorEngine.PreTask
             }
         }
 
-        protected override void _Use(ref Day d, Task t, out bool cancelUse)
+        protected override void _Use(ref AbstractDay d, AbstractTask t, out bool cancelUse)
         {
-            d.tasks.ForEach(delegate(Task t)
+            d.tasks.ForEach(delegate(AbstractTask t)
             {
                 t.IsFinished = true;
             });

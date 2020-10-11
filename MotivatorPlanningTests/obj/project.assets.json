@@ -1549,6 +1549,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "MotivatorPluginCore": "1.0.0",
           "Newtonsoft.Json": "12.0.3"
         },
         "compile": {
@@ -1560,6 +1561,19 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
+      },
+      "MotivatorPluginCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "compile": {
+          "bin/placeholder/MotivatorPluginCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MotivatorPluginCore.dll": {}
+        }
       }
     }
   },
@@ -5408,6 +5422,11 @@
       "type": "project",
       "path": "../MotivatorPlanning/MotivatorEngine.csproj",
       "msbuildProject": "../MotivatorPlanning/MotivatorEngine.csproj"
+    },
+    "MotivatorPluginCore/1.0.0": {
+      "type": "project",
+      "path": "../../MotivatorPluginCore/MotivatorPluginCore/MotivatorPluginCore.csproj",
+      "msbuildProject": "../../MotivatorPluginCore/MotivatorPluginCore/MotivatorPluginCore.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5497,9 +5516,12 @@
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

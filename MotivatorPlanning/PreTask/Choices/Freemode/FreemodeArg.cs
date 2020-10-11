@@ -6,6 +6,6 @@ namespace MotivatorEngine.PreTask
 {
     public class FreemodeArg : EventArgs
     {
-        public Task selectedTask;
+        public AbstractTask selectedTask;
     }
 }

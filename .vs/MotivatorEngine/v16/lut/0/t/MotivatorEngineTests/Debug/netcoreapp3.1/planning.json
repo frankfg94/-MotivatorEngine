@@ -1,71 +1,153 @@
 {
+  "preMenu": {
+    "$type": "MotivatorEngine.PreTask.PreMenu, MotivatorEngine",
+    "availableChoices": [
+      {
+        "$type": "MotivatorEngine.PreTask.Choices.GiveupChoice, MotivatorEngine",
+        "abandonConfirmText": "I want to give up and i am sure of it, 100%",
+        "showBeforeDay": true,
+        "showBeforeTask": true,
+        "showWhenWaiting": false,
+        "count": 999,
+        "maxCount": 999,
+        "autoCloseMenuAfterUse": true,
+        "refillOptions": null
+      }
+    ],
+    "refillEnabled": true,
+    "freeRefillEnabled": true,
+    "enabled": true
+  },
   "saveSettings": null,
   "name": "unnamed planning",
   "canShrink": true,
   "autofinishWhenNoTasks": true,
   "description": "This is a mock planning generated for testing only",
   "isFinished": false,
-  "lastFinishDate": "0001-01-01T00:00:00",
+  "lastFinishDate": "2020-10-06T16:32:59.2351097+02:00",
   "weeks": [
     {
       "description": null,
       "optionnal": false,
       "days": [
         {
+          "$type": "MotivatorEngine.Day, MotivatorEngine",
           "description": null,
           "canSkip": true,
           "hasSkip": false,
           "canFreemode": false,
           "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
+          "estimatedDuration": "00:00:00",
+          "tasks": [
+            {
+              "$type": "MotivatorEngine.Tasks.MockTask, MotivatorPluginCore",
+              "isCurrent": false,
+              "EstimatedDifficulty": 1,
+              "Infos": {
+                "shortDescription": "Task used for testing purposes, does nothing",
+                "durationLvl": 1,
+                "difficultyLvl": 1,
+                "name": "Mock Task",
+                "illustrationImagePath": "",
+                "description": "Task used for testing purposes, does nothing"
+              },
+              "PromptDevModeOnStart": true,
+              "RequireWebcam": false,
+              "RequireInternet": false,
+              "RequireGoodCpu": false,
+              "RequireMobileApp": false,
+              "RequireBluetooth": false,
+              "ScheduledTime": null,
+              "EndDate": null,
+              "IsFinished": true,
+              "IsRunning": false,
+              "EstimatedDurationScore": 1
+            },
+            {
+              "$type": "MotivatorEngine.Tasks.MockTask, MotivatorPluginCore",
+              "isCurrent": false,
+              "EstimatedDifficulty": 1,
+              "Infos": {
+                "shortDescription": "Task used for testing purposes, does nothing",
+                "durationLvl": 1,
+                "difficultyLvl": 1,
+                "name": "Mock Task",
+                "illustrationImagePath": "",
+                "description": "Task used for testing purposes, does nothing"
+              },
+              "PromptDevModeOnStart": true,
+              "RequireWebcam": false,
+              "RequireInternet": false,
+              "RequireGoodCpu": false,
+              "RequireMobileApp": false,
+              "RequireBluetooth": false,
+              "ScheduledTime": null,
+              "EndDate": null,
+              "IsFinished": true,
+              "IsRunning": false,
+              "EstimatedDurationScore": 1
+            }
+          ]
         },
         {
+          "$type": "MotivatorEngine.Day, MotivatorEngine",
           "description": null,
           "canSkip": true,
           "hasSkip": false,
           "canFreemode": false,
           "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
+          "estimatedDuration": "00:00:00",
+          "tasks": null
         },
         {
+          "$type": "MotivatorEngine.Day, MotivatorEngine",
           "description": null,
           "canSkip": true,
           "hasSkip": false,
           "canFreemode": false,
           "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
+          "estimatedDuration": "00:00:00",
+          "tasks": null
         },
         {
+          "$type": "MotivatorEngine.Day, MotivatorEngine",
           "description": null,
           "canSkip": true,
           "hasSkip": false,
           "canFreemode": false,
           "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
+          "estimatedDuration": "00:00:00",
+          "tasks": null
         },
         {
+          "$type": "MotivatorEngine.Day, MotivatorEngine",
           "description": null,
           "canSkip": true,
           "hasSkip": false,
           "canFreemode": false,
           "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
+          "estimatedDuration": "00:00:00",
+          "tasks": null
         },
         {
+          "$type": "MotivatorEngine.Day, MotivatorEngine",
           "description": null,
           "canSkip": true,
           "hasSkip": false,
           "canFreemode": false,
           "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
+          "estimatedDuration": "00:00:00",
+          "tasks": null
         },
         {
+          "$type": "MotivatorEngine.Day, MotivatorEngine",
           "description": null,
           "canSkip": true,
           "hasSkip": false,
           "canFreemode": false,
           "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
+          "estimatedDuration": "00:00:00",
+          "tasks": null
         }
       ]
     },
@@ -74,126 +156,153 @@
       "optionnal": false,
       "days": [
         {
+          "$type": "MotivatorEngine.Day, MotivatorEngine",
           "description": null,
           "canSkip": true,
           "hasSkip": false,
           "canFreemode": false,
           "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
+          "estimatedDuration": "00:00:00",
+          "tasks": [
+            {
+              "$type": "MotivatorEngine.Tasks.MockTask, MotivatorPluginCore",
+              "isCurrent": false,
+              "EstimatedDifficulty": 1,
+              "Infos": {
+                "shortDescription": "Task used for testing purposes, does nothing",
+                "durationLvl": 1,
+                "difficultyLvl": 1,
+                "name": "Mock Task",
+                "illustrationImagePath": "",
+                "description": "Task used for testing purposes, does nothing"
+              },
+              "PromptDevModeOnStart": true,
+              "RequireWebcam": false,
+              "RequireInternet": false,
+              "RequireGoodCpu": false,
+              "RequireMobileApp": false,
+              "RequireBluetooth": false,
+              "ScheduledTime": null,
+              "EndDate": null,
+              "IsFinished": true,
+              "IsRunning": false,
+              "EstimatedDurationScore": 1
+            },
+            {
+              "$type": "MotivatorEngine.Tasks.MockTask, MotivatorPluginCore",
+              "isCurrent": false,
+              "EstimatedDifficulty": 1,
+              "Infos": {
+                "shortDescription": "Task used for testing purposes, does nothing",
+                "durationLvl": 1,
+                "difficultyLvl": 1,
+                "name": "Mock Task",
+                "illustrationImagePath": "",
+                "description": "Task used for testing purposes, does nothing"
+              },
+              "PromptDevModeOnStart": true,
+              "RequireWebcam": false,
+              "RequireInternet": false,
+              "RequireGoodCpu": false,
+              "RequireMobileApp": false,
+              "RequireBluetooth": false,
+              "ScheduledTime": null,
+              "EndDate": null,
+              "IsFinished": false,
+              "IsRunning": false,
+              "EstimatedDurationScore": 1
+            }
+          ]
         },
         {
+          "$type": "MotivatorEngine.Day, MotivatorEngine",
           "description": null,
           "canSkip": true,
           "hasSkip": false,
           "canFreemode": false,
           "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
+          "estimatedDuration": "00:00:00",
+          "tasks": null
         },
         {
+          "$type": "MotivatorEngine.Day, MotivatorEngine",
           "description": null,
           "canSkip": true,
           "hasSkip": false,
           "canFreemode": false,
           "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
+          "estimatedDuration": "00:00:00",
+          "tasks": null
         },
         {
+          "$type": "MotivatorEngine.Day, MotivatorEngine",
           "description": null,
           "canSkip": true,
           "hasSkip": false,
           "canFreemode": false,
           "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
+          "estimatedDuration": "00:00:00",
+          "tasks": null
         },
         {
+          "$type": "MotivatorEngine.Day, MotivatorEngine",
           "description": null,
           "canSkip": true,
           "hasSkip": false,
           "canFreemode": false,
           "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
+          "estimatedDuration": "00:00:00",
+          "tasks": null
         },
         {
+          "$type": "MotivatorEngine.Day, MotivatorEngine",
           "description": null,
           "canSkip": true,
           "hasSkip": false,
           "canFreemode": false,
           "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
+          "estimatedDuration": "00:00:00",
+          "tasks": null
         },
         {
+          "$type": "MotivatorEngine.Day, MotivatorEngine",
           "description": null,
           "canSkip": true,
           "hasSkip": false,
           "canFreemode": false,
           "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
-        }
-      ]
-    },
-    {
-      "description": null,
-      "optionnal": false,
-      "days": [
-        {
-          "description": null,
-          "canSkip": true,
-          "hasSkip": false,
-          "canFreemode": false,
-          "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
-        },
-        {
-          "description": null,
-          "canSkip": true,
-          "hasSkip": false,
-          "canFreemode": false,
-          "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
-        },
-        {
-          "description": null,
-          "canSkip": true,
-          "hasSkip": false,
-          "canFreemode": false,
-          "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
-        },
-        {
-          "description": null,
-          "canSkip": true,
-          "hasSkip": false,
-          "canFreemode": false,
-          "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
-        },
-        {
-          "description": null,
-          "canSkip": true,
-          "hasSkip": false,
-          "canFreemode": false,
-          "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
-        },
-        {
-          "description": null,
-          "canSkip": true,
-          "hasSkip": false,
-          "canFreemode": false,
-          "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
-        },
-        {
-          "description": null,
-          "canSkip": true,
-          "hasSkip": false,
-          "canFreemode": false,
-          "hasFreemode": false,
-          "estimatedDuration": "00:00:00"
+          "estimatedDuration": "00:00:00",
+          "tasks": [
+            {
+              "$type": "MotivatorEngine.Tasks.MockTask, MotivatorPluginCore",
+              "isCurrent": false,
+              "EstimatedDifficulty": 1,
+              "Infos": {
+                "shortDescription": "Task used for testing purposes, does nothing",
+                "durationLvl": 1,
+                "difficultyLvl": 1,
+                "name": "Mock Task",
+                "illustrationImagePath": "",
+                "description": "Task used for testing purposes, does nothing"
+              },
+              "PromptDevModeOnStart": true,
+              "RequireWebcam": false,
+              "RequireInternet": false,
+              "RequireGoodCpu": false,
+              "RequireMobileApp": false,
+              "RequireBluetooth": false,
+              "ScheduledTime": null,
+              "EndDate": null,
+              "IsFinished": false,
+              "IsRunning": false,
+              "EstimatedDurationScore": 1
+            }
+          ]
         }
       ]
     }
   ],
-  "currentDayIndex": 0,
-  "testingPath": "C:\\Users\\franc\\source\\repos\\MotivatorEngine\\.vs\\MotivatorEngine\\v16\\lut\\0\\t\\MotivatorEngineTests\\Debug\\netcoreapp3.1\\planning.json"
+  "currentDayIndex": 7,
+  "noTimerBeforeTask": false,
+  "beginDate": "2020-10-06T16:32:59.0155181+02:00"
 }

@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MotivatorEngineTests", "Mot
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo", "Demo\Demo.csproj", "{F9228B8E-70DB-4E6C-8108-A91624230AEF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MotivatorPluginCore", "..\MotivatorPluginCore\MotivatorPluginCore\MotivatorPluginCore.csproj", "{5791A645-5143-4E88-8CD1-D017C2C7D545}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F9228B8E-70DB-4E6C-8108-A91624230AEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9228B8E-70DB-4E6C-8108-A91624230AEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9228B8E-70DB-4E6C-8108-A91624230AEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5791A645-5143-4E88-8CD1-D017C2C7D545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5791A645-5143-4E88-8CD1-D017C2C7D545}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5791A645-5143-4E88-8CD1-D017C2C7D545}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5791A645-5143-4E88-8CD1-D017C2C7D545}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

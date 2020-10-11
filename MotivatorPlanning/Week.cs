@@ -1,20 +1,21 @@
-﻿using System;
+﻿using MotivatorPluginCore;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace MotivatorEngine
 {
-    public class Week
+    public class Week : IWeek
     {
         public string description;
         public bool optionnal = false;
-        public List<Day> days;
+        public List<AbstractDay> days;
         public Week()
         {
 
         }
 
-        public Week(List<Day> days)
+        public Week(List<AbstractDay> days)
         {
             if(days == null )
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MotivatorPluginCore;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,6 +11,7 @@ namespace MotivatorEngine.PreTask.Choices
         {
             showBeforeDay = true;
             showBeforeTask = true;
+            autoCloseMenuAfterUse = true;
         }
 
         public override string GetDescription()
@@ -22,7 +24,7 @@ namespace MotivatorEngine.PreTask.Choices
             return "Decal this week";
         }
 
-        protected override void _Use(ref Day d, Task t, out bool cancelUse)
+        protected override void _Use(ref AbstractDay d, AbstractTask t, out bool cancelUse)
         {
             preMenu.planning.DecalWeek(d);
             d = preMenu.planning.GetCurrentDay();

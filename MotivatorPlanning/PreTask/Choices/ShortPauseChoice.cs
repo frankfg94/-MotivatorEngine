@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MotivatorPluginCore;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -24,7 +25,7 @@ namespace MotivatorEngine.PreTask
             throw new NotImplementedException();
         }
 
-        protected override void _Use(ref Day d, Task t, out bool cancel)
+        protected override void _Use(ref AbstractDay d, AbstractTask t, out bool cancel)
         {
             throw new NotImplementedException();
         }

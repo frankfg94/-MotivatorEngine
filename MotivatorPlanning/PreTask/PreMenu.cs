@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MotivatorPluginCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
@@ -7,56 +8,17 @@ namespace MotivatorEngine.PreTask
     /// <summary>
     /// Console Version
     /// </summary>
-    public class PreMenu
+    public class PreMenu : AbstractPreMenu
     {
-        [JsonIgnore]
-        public Planning planning;
-        public readonly List<PreMenuChoice> availableChoices;
-        public bool refillEnabled = true;
-        public bool freeRefillEnabled = true;
-        /// <summary>
-        /// Setting it to false is highly unrecommended, for testing purposes
-        /// </summary>
-        internal bool enabled = true;
-        public event EventHandler<ChoiceArg> MenuChoiceBeforeUse;
-        public event EventHandler<ChoiceArg> MenuChoiceAfterUse;
-        /// <summary>
-        /// Must be triggered when the user finished choosing its tasks
-        /// </summary>
-        public event EventHandler MenuClosed;
-
-        public PreMenu(List<PreMenuChoice> choices)
+        public PreMenu(): base()
         {
-            this.availableChoices = choices;
-            foreach (var choice in this.availableChoices)
-            {
-                choice.preMenu = this;
-            }
+
         }
 
 
-        internal void OnMenuClosed()
+        // Inherit the constructor
+        public PreMenu(List<PreMenuChoice> choices) : base(choices)
         {
-            MenuClosed?.Invoke(this, null);
-        }
-
-        /// <summary>
-        /// Function to signal just before an option is used
-        /// </summary>
-        /// <param name="choice"></param>
-        internal void OnBeforeUseChoice(PreMenuChoice choice)
-        {
-            MenuChoiceBeforeUse?.Invoke(this, new ChoiceArg {selectedChoice = choice });
-        }
-
-
-        /// <summary>
-        /// Function to signal after an option is used
-        /// </summary>
-        /// <param name="choice"></param>
-        internal void OnAfterUseChoice(PreMenuChoice choice)
-        {
-            MenuChoiceAfterUse?.Invoke(this, new ChoiceArg { selectedChoice = choice});
         }
 
         // Inherit this class for UI implementation
@@ -82,15 +44,15 @@ namespace MotivatorEngine.PreTask
             }
         }
 
-        public void ShowPreTaskOptions( Day curDay)
+        public override void ShowPreTaskOptions( AbstractDay curDay)
         {
             if (curDay.hasFreemode)
             {
-                Console.WriteLine("Choose the task you want to use");
+                Console.WriteLine("Choose the AbstractTask you want to use");
             }
         }
 
-        internal void ShowPreDayOptions(Day curDay)
+        internal void ShowPreDayOptions(AbstractDay curDay)
         {
             /*
             if (curDay.canSkip)
@@ -105,14 +67,14 @@ namespace MotivatorEngine.PreTask
             {
                 if (curDay.tasks.Count > 0)
                 {
-                    if (IsConsoleAnswerPostive(">>> Do you want to enable any task order?"))
+                    if (IsConsoleAnswerPostive(">>> Do you want to enable any AbstractTask order?"))
                     {
                         curDay.hasFreemode = true;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Didn't propose the freemode because this Day doesn't have tasks");
+                    Console.WriteLine("Didn't propose the freemode because this Day doesn't have AbstractTasks");
                 }
             }
             */

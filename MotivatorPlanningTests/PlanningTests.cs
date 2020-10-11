@@ -2,6 +2,7 @@
 using MotivatorEngine;
 using MotivatorEngine.Tasks;
 using MotivatorEngineTests;
+using MotivatorPluginCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,10 +22,10 @@ namespace MotivatorEngine.Tests
             {
                 Assert.Fail("The planning had the day list initialized but we didn't add them");
             }
-            p.SetContent(new List<Week>
+            p.SetContent(new List<IWeek>
             {
-                new Week(new List<Day>{
-                new Day(new List<Task>{
+                new IWeek(new List<AbstractDay>{
+                new Day(new List<AbstractTask>{
                     new MockTask()
                 }),
                 new Day(),
@@ -45,10 +46,10 @@ namespace MotivatorEngine.Tests
             {
                 Assert.Fail("The planning had the day list initialized but we didn't add them");
             }
-            p.SetContent(new List<Week>
+            p.SetContent(new List<IWeek>
             {
-                new Week(new List<Day>{
-                new Day( new List<Task> { new MockTask()} ),
+                new IWeek(new List<AbstractDay>{
+                new Day( new List<AbstractTask> { new MockTask()} ),
                 new Day(),
                 new Day(),
                 new Day(),
@@ -56,14 +57,14 @@ namespace MotivatorEngine.Tests
                 new Day(),
                 new Day()
                 }),
-                new Week(new List<Day>{
-                new Day( new List<Task> { new MockTask()} ),
+                new IWeek(new List<AbstractDay>{
+                new Day( new List<AbstractTask> { new MockTask()} ),
                 new Day(),
                 new Day(),
                 new Day(),
                 new Day(),
                 new Day(),
-                new Day( new List<Task> { new MockTask()} ),
+                new Day( new List<AbstractTask> { new MockTask()} ),
                 })
             });
 
@@ -79,10 +80,10 @@ namespace MotivatorEngine.Tests
             var daySecondWeek = new Day();
             var p = new MockPlanning();
 
-            p.SetContent(new List<Week>
+            p.SetContent(new List<IWeek>
             {
-                new Week(new List<Day>{
-                new Day( new List<Task> { new MockTask()} ),
+                new IWeek(new List<AbstractDay>{
+                new Day( new List<AbstractTask> { new MockTask()} ),
                 new Day(),
                 new Day(),
                 curDay,
@@ -90,14 +91,14 @@ namespace MotivatorEngine.Tests
                 new Day(),
                 new Day()
                 }),
-                new Week(new List<Day>{
-                new Day( new List<Task> { new MockTask()} ),
+                new IWeek(new List<AbstractDay>{
+                new Day( new List<AbstractTask> { new MockTask()} ),
                 new Day(),
                 new Day(),
                 new Day(),
                 new Day(),
                 daySecondWeek,
-                new Day( new List<Task> { new MockTask()} ),
+                new Day( new List<AbstractTask> { new MockTask()} ),
                 })
             });
             if (p.GetCurrentDay() == null)
@@ -115,14 +116,14 @@ namespace MotivatorEngine.Tests
         public void DecalDayTest()
         {
             var p = new MockPlanning();
-            var dayToDecal = new Day(new List<Task> {
+            var dayToDecal = new Day(new List<AbstractTask> {
                 new MockTask()
             });
-            p.SetContent(new List<Week>
+            p.SetContent(new List<IWeek>
             {
-                new Week
+                new IWeek
                 (
-                    new List<Day>
+                    new List<AbstractDay>
                     {
                         dayToDecal,
                         new Day(),
@@ -155,10 +156,10 @@ namespace MotivatorEngine.Tests
             var p = new MockPlanning();
             var firstTask = new MockTask();
             var secondTask = new MockTask();
-            var dayToDecal = new Day(new List<Task> { firstTask });
-            p.SetContent(new List<Week>
+            var dayToDecal = new Day(new List<AbstractTask> { firstTask });
+            p.SetContent(new List<IWeek>
                     {
-                        new Week(new List<Day>{
+                        new IWeek(new List<AbstractDay>{
                         dayToDecal,
                         new Day(),
                         new Day(),
@@ -167,14 +168,14 @@ namespace MotivatorEngine.Tests
                         new Day(),
                         new Day(),
                         }),
-                        new Week(new List<Day>{
-                        new Day( new List<Task> { secondTask, new MockTask() } ),
+                        new IWeek(new List<AbstractDay>{
+                        new Day( new List<AbstractTask> { secondTask, new MockTask() } ),
                         new Day(),
                         new Day(),
                         new Day(),
                         new Day(),
                         new Day(),
-                        new Day( new List<Task> { new MockTask()} ),
+                        new Day( new List<AbstractTask> { new MockTask()} ),
                         })
                     });
             Console.WriteLine("Before decal\n" + p);
@@ -190,10 +191,10 @@ namespace MotivatorEngine.Tests
             var p = new MockPlanning();
             var firstTask = new MockTask();
             var secondTask = new MockTask();
-            var dayToDecal = new Day(new List<Task> { firstTask });
-            p.SetContent(new List<Week>
+            var dayToDecal = new Day(new List<AbstractTask> { firstTask });
+            p.SetContent(new List<IWeek>
                     {
-                        new Week(new List<Day>{
+                        new IWeek(new List<AbstractDay>{
                         dayToDecal,
                         new Day(),
                         new Day(),
@@ -202,14 +203,14 @@ namespace MotivatorEngine.Tests
                         new Day(),
                         new Day(),
                         }),
-                        new Week(new List<Day>{
-                        new Day( new List<Task> { secondTask, new MockTask() } ),
+                        new IWeek(new List<AbstractDay>{
+                        new Day( new List<AbstractTask> { secondTask, new MockTask() } ),
                         new Day(),
                         new Day(),
                         new Day(),
                         new Day(),
                         new Day(),
-                        new Day( new List<Task> { new MockTask()} ),
+                        new Day( new List<AbstractTask> { new MockTask()} ),
                         })
                     });
             Console.WriteLine("Before decal\n" + p);
@@ -223,14 +224,14 @@ namespace MotivatorEngine.Tests
         public void DecalWeekTest()
         {
             var p = new MockPlanning();
-            var dayToDecal = new Day(new List<Task> {
+            var dayToDecal = new Day(new List<AbstractTask> {
                 new MockTask()
             });
-            p.SetContent(new List<Week>
+            p.SetContent(new List<IWeek>
             {
-                new Week
+                new IWeek
                 (
-                    new List<Day>
+                    new List<AbstractDay>
                     {
                         dayToDecal,
                         new Day(),
@@ -263,14 +264,14 @@ namespace MotivatorEngine.Tests
         public void SkipDayTest()
         {
             var p = new MockPlanning();
-            var dayToSkip = new Day(new List<Task> {
+            var dayToSkip = new Day(new List<AbstractTask> {
                 new MockTask()
             });
-            p.SetContent(new List<Week>
+            p.SetContent(new List<IWeek>
             {
-                new Week
+                new IWeek
                 (
-                    new List<Day>
+                    new List<AbstractDay>
                     {
                         dayToSkip,
                         new Day(),
@@ -304,11 +305,11 @@ namespace MotivatorEngine.Tests
         {
             var p = new MockPlanning();
             var dayToDecal = new Day();
-            p.SetContent(new List<Week>
+            p.SetContent(new List<IWeek>
             {
-                new Week
+                new IWeek
                 (
-                    new List<Day>
+                    new List<AbstractDay>
                     {
                         new Day(),
                         new Day(),
@@ -319,9 +320,9 @@ namespace MotivatorEngine.Tests
                         dayToDecal
                     }
                 ),
-                new Week
+                new IWeek
                 (
-                    new List<Day>
+                    new List<AbstractDay>
                     {
                         new Day(),
                         new Day(),
@@ -350,21 +351,21 @@ namespace MotivatorEngine.Tests
         {
             var p = new MockPlanning();
             var firstDay = new Day();
-            var dayToDecal = new Day(new List<Task>
+            var dayToDecal = new Day(new List<AbstractTask>
             {
                 new MockTask(),
                 new MockTask()
             });
-            var dayWithTasks = new Day(new List<Task>
+            var dayWithTasks = new Day(new List<AbstractTask>
             {
                 new MockTask(),
                 new MockTask()
             });
-            p.SetContent(new List<Week>
+            p.SetContent(new List<IWeek>
             {
-                new Week
+                new IWeek
                 (
-                    new List<Day>
+                    new List<AbstractDay>
                     {
                         firstDay,
                         new Day(),
@@ -375,9 +376,9 @@ namespace MotivatorEngine.Tests
                         dayToDecal // 6
                     }
                 ),
-                new Week
+                new IWeek
                 (
-                    new List<Day>
+                    new List<AbstractDay>
                     {
                         new Day(), //7
                         new Day(), //8
@@ -404,10 +405,10 @@ namespace MotivatorEngine.Tests
             var firstTask = new MockTask();
             var secondTask = new MockTask();
             var lastTask = new MockTask();
-            p.SetContent(new List<Week>
+            p.SetContent(new List<IWeek>
             {
-                new Week(new List<Day>{
-                new Day( new List<Task> { firstTask} ),
+                new IWeek(new List<AbstractDay>{
+                new Day( new List<AbstractTask> { firstTask} ),
                 new Day(),
                 new Day(),
                 new Day(),
@@ -415,14 +416,14 @@ namespace MotivatorEngine.Tests
                 new Day(),
                 new Day(),
                 }),
-                new Week(new List<Day>{
-                new Day( new List<Task> { secondTask } ),
+                new IWeek(new List<AbstractDay>{
+                new Day( new List<AbstractTask> { secondTask } ),
                 new Day(),
                 new Day(),
                 new Day(),
                 new Day(),
                 new Day(),
-                new Day( new List<Task> { lastTask } ),
+                new Day( new List<AbstractTask> { lastTask } ),
                 })
             });
             var curDay = p.GetCurrentDay();
@@ -444,10 +445,10 @@ namespace MotivatorEngine.Tests
             var p = new MockPlanning();
             var firstTask = new MockTask();
             var secondTask = new MockTask();
-            p.SetContent(new List<Week>
+            p.SetContent(new List<IWeek>
             {
-                new Week(new List<Day>{
-                new Day( new List<Task> { firstTask} ),
+                new IWeek(new List<AbstractDay>{
+                new Day( new List<AbstractTask> { firstTask} ),
                 new Day(),
                 new Day(),
                 new Day(),
@@ -455,14 +456,14 @@ namespace MotivatorEngine.Tests
                 new Day(),
                 new Day(),
                 }),
-                new Week(new List<Day>{
-                new Day( new List<Task> { secondTask } ),
+                new IWeek(new List<AbstractDay>{
+                new Day( new List<AbstractTask> { secondTask } ),
                 new Day(),
                 new Day(),
                 new Day(),
                 new Day(),
                 new Day(),
-                new Day( new List<Task> { new MockTask()} ),
+                new Day( new List<AbstractTask> { new MockTask()} ),
                 })
             });
 
@@ -478,10 +479,10 @@ namespace MotivatorEngine.Tests
             var p = new MockPlanning();
             var firstTask = new MockTask();
             var secondTask = new MockTask();
-            p.SetContent(new List<Week>
+            p.SetContent(new List<IWeek>
             {
-                new Week(new List<Day>{
-                new Day( new List<Task> { firstTask} ),
+                new IWeek(new List<AbstractDay>{
+                new Day( new List<AbstractTask> { firstTask} ),
                 new Day(),
                 new Day(),
                 new Day(),
@@ -489,20 +490,20 @@ namespace MotivatorEngine.Tests
                 new Day(),
                 new Day(),
                 }),
-                new Week(new List<Day>{
-                new Day( new List<Task> { secondTask } ),
+                new IWeek(new List<AbstractDay>{
+                new Day( new List<AbstractTask> { secondTask } ),
                 new Day(),
                 new Day(),
                 new Day(),
                 new Day(),
                 new Day(),
-                new Day( new List<Task> { new MockTask()} ),
+                new Day( new List<AbstractTask> { new MockTask()} ),
                 })
             });
-            Roadmap rm = new Roadmap(p);
-            rm.PrintRoadmap();
+            var rm = new ConsoleRoadmap(p);
+            rm.ShowRoadmap();
             p.currentDayIndex = 13;
-            rm.PrintRoadmap();
+            rm.ShowRoadmap();
         }
 
         [TestMethod()]
@@ -511,10 +512,10 @@ namespace MotivatorEngine.Tests
             var p = new MockPlanning();
             var firstTask = new MockTask();
             var secondTask = new MockTask();
-            p.SetContent(new List<Week>
+            p.SetContent(new List<IWeek>
             {
-                new Week(new List<Day>{
-                new Day( new List<Task> { firstTask} ),
+                new IWeek(new List<AbstractDay>{
+                new Day( new List<AbstractTask> { firstTask} ),
                 new Day(),
                 new Day(),
                 new Day(),
@@ -522,18 +523,18 @@ namespace MotivatorEngine.Tests
                 new Day(),
                 new Day(),
                 }),
-                new Week(new List<Day>{
-                new Day( new List<Task> { secondTask, new MockTask() } ),
+                new IWeek(new List<AbstractDay>{
+                new Day( new List<AbstractTask> { secondTask, new MockTask() } ),
                 new Day(),
                 new Day(),
                 new Day(),
                 new Day(),
                 new Day(),
-                new Day( new List<Task> { new MockTask()} ),
+                new Day( new List<AbstractTask> { new MockTask()} ),
                 })
             });
             p.currentDayIndex = 13;
-            Roadmap r = new Roadmap(p);
+            var r = new ConsoleRoadmap(p);
             var text = r.GetRoadmapText();
             Assert.IsNotNull(text);
             Console.WriteLine(text);

@@ -2,6 +2,7 @@
 using MotivatorEngine;
 using MotivatorEngine.PreTask.Choices;
 using MotivatorEngine.Tasks;
+using MotivatorPluginCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -23,10 +24,10 @@ namespace MotivatorEngineTests
                 var p = new MockPlanning();
                 var firstTask = new MockTask();
                 var secondTask = new MockTask();
-                p.SetContent(new List<Week>
+                p.SetContent(new List<IWeek>
                 {
-                    new Week(new List<Day>{
-                    new Day( new List<Task> { firstTask, new MockTask()} ),
+                    new IWeek(new List<AbstractDay>{
+                    new Day( new List<AbstractTask> { firstTask, new MockTask()} ),
                     new Day(),
                     new Day(), 
                     new Day(),
@@ -34,14 +35,14 @@ namespace MotivatorEngineTests
                     new Day(),
                     new Day(),
                     }),
-                    new Week(new List<Day>{
-                    new Day( new List<Task> { secondTask, new MockTask() } ),
+                    new IWeek(new List<AbstractDay>{
+                    new Day( new List<AbstractTask> { secondTask, new MockTask() } ),
                     new Day(),
                     new Day(),
                     new Day(),
                     new Day(),
                     new Day(),
-                    new Day( new List<Task> { new MockTask()} ),
+                    new Day( new List<AbstractTask> { new MockTask()} ),
                     })
                 });
             p.SetPreMenu(new MotivatorEngine.PreTask.PreMenu(new List<MotivatorEngine.PreTask.PreMenuChoice> { 

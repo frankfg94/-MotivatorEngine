@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MotivatorPluginCore;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -18,7 +19,7 @@ namespace MotivatorEngine.PreTask
 
         public override string GetDescription()
         {
-            return "Skip this task without any consequences";
+            return "Skip this Task without any consequences";
         }
 
         public override string GetName()
@@ -26,7 +27,7 @@ namespace MotivatorEngine.PreTask
             return "Skip the Task";
         }
 
-        protected override void _Use(ref Day d, Task t, out bool cancelUse)
+        protected override void _Use(ref AbstractDay d, AbstractTask t, out bool cancelUse)
         {
             if(t != null)
             {
@@ -35,7 +36,7 @@ namespace MotivatorEngine.PreTask
             } 
             else
             {
-                Console.WriteLine("Error while using option: Task is null");
+                Console.WriteLine("Error while using option: AbstractTask is null");
                 cancelUse = true;
             }
         }
