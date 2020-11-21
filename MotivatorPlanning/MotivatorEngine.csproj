@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
       <UseWPF>true</UseWPF>
+      <CodeAnalysisRuleSet>MotivatorEngine.ruleset</CodeAnalysisRuleSet>
 
   </PropertyGroup>
 
@@ -11,6 +12,10 @@
     <EmbeddedResource Remove="PreTask\Choices\NewFolder\**" />
     <None Remove="PreTask\Choices\NewFolder\**" />
     <Page Remove="PreTask\Choices\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\WebLearn\.sonarlint\motivator2\CSharp\SonarLint.xml" Link="SonarLint.xml" />
   </ItemGroup>
 
   <ItemGroup>

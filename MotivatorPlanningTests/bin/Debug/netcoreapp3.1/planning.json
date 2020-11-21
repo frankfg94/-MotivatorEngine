@@ -1,11 +1,30 @@
 {
+  "preMenu": {
+    "$type": "MotivatorEngine.PreTask.PreMenu, MotivatorEngine",
+    "availableChoices": [
+      {
+        "$type": "MotivatorEngine.PreTask.Choices.GiveupChoice, MotivatorEngine",
+        "abandonConfirmText": "I want to give up and i am sure of it, 100%",
+        "showBeforeDay": true,
+        "showBeforeTask": true,
+        "showWhenWaiting": false,
+        "count": 999,
+        "maxCount": 999,
+        "autoCloseMenuAfterUse": true,
+        "refillOptions": null
+      }
+    ],
+    "refillEnabled": true,
+    "freeRefillEnabled": true,
+    "enabled": true
+  },
   "saveSettings": null,
   "name": "unnamed planning",
   "canShrink": true,
   "autofinishWhenNoTasks": true,
   "description": "This is a mock planning generated for testing only",
   "isFinished": false,
-  "lastFinishDate": "2020-10-06T00:10:11.7139568+02:00",
+  "lastFinishDate": "2020-11-21T21:53:06.2523487+01:00",
   "weeks": [
     {
       "description": null,
@@ -23,6 +42,7 @@
             {
               "$type": "MotivatorEngine.Tasks.MockTask, MotivatorPluginCore",
               "isCurrent": false,
+              "isFinished": true,
               "EstimatedDifficulty": 1,
               "Infos": {
                 "shortDescription": "Task used for testing purposes, does nothing",
@@ -47,6 +67,7 @@
             {
               "$type": "MotivatorEngine.Tasks.MockTask, MotivatorPluginCore",
               "isCurrent": false,
+              "isFinished": true,
               "EstimatedDifficulty": 1,
               "Infos": {
                 "shortDescription": "Task used for testing purposes, does nothing",
@@ -64,7 +85,7 @@
               "RequireBluetooth": false,
               "ScheduledTime": null,
               "EndDate": null,
-              "IsFinished": false,
+              "IsFinished": true,
               "IsRunning": false,
               "EstimatedDurationScore": 1
             }
@@ -148,6 +169,7 @@
             {
               "$type": "MotivatorEngine.Tasks.MockTask, MotivatorPluginCore",
               "isCurrent": false,
+              "isFinished": true,
               "EstimatedDifficulty": 1,
               "Infos": {
                 "shortDescription": "Task used for testing purposes, does nothing",
@@ -165,13 +187,14 @@
               "RequireBluetooth": false,
               "ScheduledTime": null,
               "EndDate": null,
-              "IsFinished": false,
+              "IsFinished": true,
               "IsRunning": false,
               "EstimatedDurationScore": 1
             },
             {
               "$type": "MotivatorEngine.Tasks.MockTask, MotivatorPluginCore",
               "isCurrent": false,
+              "isFinished": true,
               "EstimatedDifficulty": 1,
               "Infos": {
                 "shortDescription": "Task used for testing purposes, does nothing",
@@ -189,7 +212,7 @@
               "RequireBluetooth": false,
               "ScheduledTime": null,
               "EndDate": null,
-              "IsFinished": false,
+              "IsFinished": true,
               "IsRunning": false,
               "EstimatedDurationScore": 1
             }
@@ -257,6 +280,7 @@
             {
               "$type": "MotivatorEngine.Tasks.MockTask, MotivatorPluginCore",
               "isCurrent": false,
+              "isFinished": true,
               "EstimatedDifficulty": 1,
               "Infos": {
                 "shortDescription": "Task used for testing purposes, does nothing",
@@ -274,7 +298,7 @@
               "RequireBluetooth": false,
               "ScheduledTime": null,
               "EndDate": null,
-              "IsFinished": false,
+              "IsFinished": true,
               "IsRunning": false,
               "EstimatedDurationScore": 1
             }
@@ -283,7 +307,8 @@
       ]
     }
   ],
-  "currentDayIndex": 0,
+  "currentDayIndex": 13,
+  "plugins": null,
   "noTimerBeforeTask": false,
-  "beginDate": "2020-10-06T00:10:11.7120787+02:00"
+  "beginDate": "2020-11-21T21:53:06.0042153+01:00"
 }

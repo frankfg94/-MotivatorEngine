@@ -1,0 +1,13 @@
+C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\b\MotivatorEngineTests\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\b\MotivatorEngineTests\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\b\MotivatorEngineTests\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\b\MotivatorEngineTests\Debug\netcoreapp3.1\MotivatorEngineTests.deps.json
+C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\b\MotivatorEngineTests\Debug\netcoreapp3.1\MotivatorEngineTests.runtimeconfig.json
+C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\b\MotivatorEngineTests\Debug\netcoreapp3.1\MotivatorEngineTests.runtimeconfig.dev.json
+C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\b\MotivatorEngineTests\Debug\netcoreapp3.1\MotivatorEngineTests.dll
+C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\i\MotivatorEngineTests\Debug\netcoreapp3.1\MotivatorEngineTests.csprojAssemblyReference.cache
+C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\i\MotivatorEngineTests\Debug\netcoreapp3.1\MotivatorEngineTests.AssemblyInfoInputs.cache
+C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\i\MotivatorEngineTests\Debug\netcoreapp3.1\MotivatorEngineTests.AssemblyInfo.cs
+C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\i\MotivatorEngineTests\Debug\netcoreapp3.1\MotivatorEngineTests.csproj.CopyComplete
+C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\i\MotivatorEngineTests\Debug\netcoreapp3.1\MotivatorEngineTests.dll
+C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\i\MotivatorEngineTests\Debug\netcoreapp3.1\MotivatorEngineTests.genruntimeconfig.cache

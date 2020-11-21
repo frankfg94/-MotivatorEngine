@@ -25,7 +25,7 @@ namespace MotivatorEngine
             return preMenu;
         }
 
-        public override AbstractPreMenu AskPreTaskMenu(ref AbstractDay d, AbstractTask t)
+        public override AbstractPreMenu AskPreTaskMenu(ref AbstractDay d, AbstractTask taskToDo)
         {
             Console.WriteLine("[IA] Selecting the options for the task..." + (d.tasks.FindAll(t => t.IsFinished).Count+1) + "/" + d.tasks.Count);
             return preMenu;
@@ -59,6 +59,17 @@ namespace MotivatorEngine
             return TimeSpan.FromMilliseconds(1);
         }
 
+        public override void HandlePluginEvents(List<IPlugin> plugins)
+        {
+            foreach (var p in plugins)
+            {
+                p.LoadProgressChanged += (s, e) =>
+                {
+                    Console.WriteLine($"[PLUGINS] Using plugin {e.progress}% : {e.text}");
+                };
+            }
+        }
+
         public override void SelectPlugins()
         {
             // No plugins to select at the moment
@@ -77,6 +88,10 @@ namespace MotivatorEngine
             return new Day();
         }
 
+        /// <summary>
+        /// This method enables an inherited roadmap to be directly used in base classes
+        /// </summary>
+        /// <returns></returns>
         protected override AbstractRoadmap InstantiateRoadmap()
         {
             return new ConsoleRoadmap(this);

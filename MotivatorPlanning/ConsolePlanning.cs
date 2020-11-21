@@ -8,9 +8,9 @@ namespace MotivatorEngine
     {
         public bool waitBeforeTaskTimeSpan = true;
         public bool waitBeforeDayTimeSpan = true;
-        public override bool AskConfirmation(string msg)
+        public override bool AskConfirmation(string text)
         {
-            Console.WriteLine($"{msg} (y/n) ");
+            Console.WriteLine($"{text} (y/n) ");
             var key = Console.ReadKey();
             if (key.KeyChar == 'y' || key.KeyChar == 'Y')
             {
@@ -20,7 +20,7 @@ namespace MotivatorEngine
             {
                 return false;
             }
-            return AskConfirmation(msg);
+            return AskConfirmation(text);
         }
 
         public override AbstractPreMenu AskPreDayMenu(ref AbstractDay day)
@@ -225,6 +225,7 @@ namespace MotivatorEngine
                 handlerSet = true;
             }
             string hellText = "#[`FSD73Q5Q/¨op£*¤èé'(è_fdsfxghaq.+!²&";
+            // For debugging, we use a very simple abandon text
             hellText = "a";
             if (AskConfirmation("///// Are you sure you want to abandon the planning ? ////"))
             {

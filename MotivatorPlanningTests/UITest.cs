@@ -20,6 +20,8 @@ namespace MotivatorEngineTests
         [TestMethod()]
         public void SPEED_OF_LIGHT_TEST()
         {
+            new Thread(() =>
+            {
                 // your code
                 var p = new MockPlanning();
                 var firstTask = new MockTask();
@@ -49,6 +51,8 @@ namespace MotivatorEngineTests
                 new GiveupChoice()
             }));
             p.StartFirstTime();
+            }).Start();
+            Thread.Sleep(2000);
         }
     }
 }

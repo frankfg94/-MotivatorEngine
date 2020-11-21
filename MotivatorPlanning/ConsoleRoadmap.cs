@@ -59,7 +59,7 @@ namespace MotivatorEngine
             Console.WriteLine("/////////////ROADMAP////////////");
             var days = this.planning.GetDays();
             Console.WriteLine($"Planning name : {planning.name}");
-            Console.WriteLine($"Current day index {planning.currentDayIndex} / {days.Count}");
+            Console.WriteLine($"Current day index {planning.currentDayIndex+1} / {days.Count}");
             var taskDoneCount = planning.GetTasks().FindAll(x => x.IsFinished).Count;
             var tCount =  planning.GetTasks().Count;
             Console.WriteLine($"Current progress {taskDoneCount / tCount * 100} % ( {taskDoneCount} / {tCount} Tasks done ) ");
@@ -114,7 +114,7 @@ namespace MotivatorEngine
             StringBuilder sb = new StringBuilder();
             var days = this.planning.GetDays();
             sb.AppendLine($"Planning name : {planning.name}");
-            sb.AppendLine($"Current day index {planning.currentDayIndex} / {days.Count}");
+            sb.AppendLine($"Current day index {planning.currentDayIndex+1} / {days.Count}");
             var taskDoneCount = planning.GetTasks().FindAll(x => x.IsFinished).Count;
             var tCount = planning.GetTasks().Count;
             sb.AppendLine($"Current progress {taskDoneCount / tCount * 100} % ( {taskDoneCount} / {tCount} Tasks done ) ");
