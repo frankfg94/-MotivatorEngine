@@ -19,7 +19,7 @@ namespace MotivatorEngine.PreTask
         
         public override string GetDescription()
         {
-            return "Skip the current day and all its AbstractTasks";
+            return "Skip the current day and all its tasks";
         }
 
         public override string GetName()
@@ -46,7 +46,7 @@ namespace MotivatorEngine.PreTask
                 }
                 else
                 {
-                    msg = "Don't need to skip, because the day has no AbstractTasks";
+                    msg = "Don't need to skip, because the day has no Tasks";
                     return false;
                 }
             }

@@ -1,10 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "AJ6rFotO6BAFSLR1wuoIrXRR6n1lXJiXA93aNqwuuOUjAcTUkiTgYalqiROtt7lojM8j16nMijxuGkjhd+Z3lA==",
+  "dgSpecHash": "ETGx/ab1CtTrtHYBh62GOuT6JC9qWbjpXMEvkzMMCMpTYuywRy4qG+T6JeoqOYpTg0Dmllky9qH6ctR29hX8vQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\franc\\source\\repos\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\franc\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+    "C:\\Users\\franc\\.nuget\\packages\\log4net\\2.0.12\\log4net.2.0.12.nupkg.sha512",
+    "C:\\Users\\franc\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\franc\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\franc\\.nuget\\packages\\system.configuration.configurationmanager\\4.5.0\\system.configuration.configurationmanager.4.5.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\franc\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.5.0\\system.security.cryptography.protecteddata.4.5.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

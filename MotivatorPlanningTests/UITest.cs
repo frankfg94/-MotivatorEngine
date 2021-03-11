@@ -27,7 +27,7 @@ namespace MotivatorEngineTests
                 var firstTask = new MockTask();
                 var secondTask = new MockTask();
                 p.SetContent(new List<IWeek>
-                {
+                { 
                     new IWeek(new List<AbstractDay>{
                     new Day( new List<AbstractTask> { firstTask, new MockTask()} ),
                     new Day(),

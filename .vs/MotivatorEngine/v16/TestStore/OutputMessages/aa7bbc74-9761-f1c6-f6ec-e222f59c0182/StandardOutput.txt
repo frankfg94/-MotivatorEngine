@@ -4,9 +4,12 @@
 Starting the planning
 >>>>>>>>>>>>>>>>>>>>> Beginning a new day : 1/14
 /////////////ROADMAP////////////
-Planning name : unnamed planning
-Current day index 1 / 14
-Current progress 0 % ( 0 / 5 Tasks done ) 
+| Planning name :           unnamed planning
+| Current day index :       1/14
+| Effective study days:     3 days
+| Total intellect time:     0.01 hours
+| Average intellect time:   0 hours
+| Current progress:         0 % ( 0 / 5 Tasks done )
 ------------- Week number 1 / 2 --------------
  ===> Day 1 / 14 [Current day] [ 0 / 2 ]
  -- Day 2 / 14 [Empty day]
@@ -57,42 +60,14 @@ The day 1/14 is finished !
 Starting next day timer.. Time remaining : 00:00:00.0010000
 Starting from next day timer
 Starting the planning
+>>>>>>>>>>>>>>>>>>>>> Beginning a new day : 3/14
 /////////////ROADMAP////////////
-Planning name : unnamed planning
-Current day index 2 / 14
-Current progress 0 % ( 2 / 5 Tasks done ) 
-------------- Week number 1 / 2 --------------
- -- Day 1 / 14 [Finished  2 / 2 ]
- ===> Day 2 / 14 [Current day] [Empty day]
- -- Day 3 / 14 [Empty day]
- -- Day 4 / 14 [Empty day]
- -- Day 5 / 14 [Empty day]
- -- Day 6 / 14 [Empty day]
- -- Day 7 / 14 [Empty day]
-------------- Week number 2 / 2 --------------
- -- Day 8 / 14 [ 0 / 2 ]
- -- Day 9 / 14 [Empty day]
- -- Day 10 / 14 [Empty day]
- -- Day 11 / 14 [Empty day]
- -- Day 12 / 14 [Empty day]
- -- Day 13 / 14 [Empty day]
- -- Day 14 / 14 [ 0 / 1 ]
-[IA] Selecting the menu options for the day...
----------------------
-| Progress saved    |
----------------------
-Starting to do all the tasks for the day 1
-The day 2/14 is finished !
----------------------
-| Progress saved    |
----------------------
-Starting next day timer.. Time remaining : 00:00:00.0010000
-Starting from next day timer
-Starting the planning
-/////////////ROADMAP////////////
-Planning name : unnamed planning
-Current day index 3 / 14
-Current progress 0 % ( 2 / 5 Tasks done ) 
+| Planning name :           unnamed planning
+| Current day index :       3/14
+| Effective study days:     3 days
+| Total intellect time:     0.01 hours
+| Average intellect time:   0 hours
+| Current progress:         0 % ( 2 / 5 Tasks done )
 ------------- Week number 1 / 2 --------------
  -- Day 1 / 14 [Finished  2 / 2 ]
  -- Day 2 / 14 [Empty day]
@@ -113,7 +88,7 @@ Current progress 0 % ( 2 / 5 Tasks done )
 ---------------------
 | Progress saved    |
 ---------------------
-Starting to do all the tasks for the day 2
+Starting to do all the tasks for the day 1
 The day 3/14 is finished !
 ---------------------
 | Progress saved    |
@@ -122,9 +97,12 @@ Starting next day timer.. Time remaining : 00:00:00.0010000
 Starting from next day timer
 Starting the planning
 /////////////ROADMAP////////////
-Planning name : unnamed planning
-Current day index 4 / 14
-Current progress 0 % ( 2 / 5 Tasks done ) 
+| Planning name :           unnamed planning
+| Current day index :       4/14
+| Effective study days:     3 days
+| Total intellect time:     0.01 hours
+| Average intellect time:   0 hours
+| Current progress:         0 % ( 2 / 5 Tasks done )
 ------------- Week number 1 / 2 --------------
  -- Day 1 / 14 [Finished  2 / 2 ]
  -- Day 2 / 14 [Empty day]
@@ -154,9 +132,12 @@ Starting next day timer.. Time remaining : 00:00:00.0010000
 Starting from next day timer
 Starting the planning
 /////////////ROADMAP////////////
-Planning name : unnamed planning
-Current day index 5 / 14
-Current progress 0 % ( 2 / 5 Tasks done ) 
+| Planning name :           unnamed planning
+| Current day index :       5/14
+| Effective study days:     3 days
+| Total intellect time:     0.01 hours
+| Average intellect time:   0 hours
+| Current progress:         0 % ( 2 / 5 Tasks done )
 ------------- Week number 1 / 2 --------------
  -- Day 1 / 14 [Finished  2 / 2 ]
  -- Day 2 / 14 [Empty day]
@@ -186,9 +167,12 @@ Starting next day timer.. Time remaining : 00:00:00.0010000
 Starting from next day timer
 Starting the planning
 /////////////ROADMAP////////////
-Planning name : unnamed planning
-Current day index 6 / 14
-Current progress 0 % ( 2 / 5 Tasks done ) 
+| Planning name :           unnamed planning
+| Current day index :       6/14
+| Effective study days:     3 days
+| Total intellect time:     0.01 hours
+| Average intellect time:   0 hours
+| Current progress:         0 % ( 2 / 5 Tasks done )
 ------------- Week number 1 / 2 --------------
  -- Day 1 / 14 [Finished  2 / 2 ]
  -- Day 2 / 14 [Empty day]
@@ -218,9 +202,12 @@ Starting next day timer.. Time remaining : 00:00:00.0010000
 Starting from next day timer
 Starting the planning
 /////////////ROADMAP////////////
-Planning name : unnamed planning
-Current day index 7 / 14
-Current progress 0 % ( 2 / 5 Tasks done ) 
+| Planning name :           unnamed planning
+| Current day index :       7/14
+| Effective study days:     3 days
+| Total intellect time:     0.01 hours
+| Average intellect time:   0 hours
+| Current progress:         0 % ( 2 / 5 Tasks done )
 ------------- Week number 1 / 2 --------------
  -- Day 1 / 14 [Finished  2 / 2 ]
  -- Day 2 / 14 [Empty day]
@@ -250,9 +237,12 @@ Starting next day timer.. Time remaining : 00:00:00.0010000
 Starting from next day timer
 Starting the planning
 /////////////ROADMAP////////////
-Planning name : unnamed planning
-Current day index 8 / 14
-Current progress 0 % ( 2 / 5 Tasks done ) 
+| Planning name :           unnamed planning
+| Current day index :       8/14
+| Effective study days:     3 days
+| Total intellect time:     0.01 hours
+| Average intellect time:   0 hours
+| Current progress:         0 % ( 2 / 5 Tasks done )
 ------------- Week number 1 / 2 --------------
  -- Day 1 / 14 [Finished  2 / 2 ]
  -- Day 2 / 14 [Empty day]
@@ -304,9 +294,12 @@ Starting next day timer.. Time remaining : 00:00:00.0010000
 Starting from next day timer
 Starting the planning
 /////////////ROADMAP////////////
-Planning name : unnamed planning
-Current day index 9 / 14
-Current progress 0 % ( 4 / 5 Tasks done ) 
+| Planning name :           unnamed planning
+| Current day index :       9/14
+| Effective study days:     3 days
+| Total intellect time:     0.01 hours
+| Average intellect time:   0 hours
+| Current progress:         0 % ( 4 / 5 Tasks done )
 ------------- Week number 1 / 2 --------------
  -- Day 1 / 14 [Finished  2 / 2 ]
  -- Day 2 / 14 [Empty day]
@@ -336,9 +329,12 @@ Starting next day timer.. Time remaining : 00:00:00.0010000
 Starting from next day timer
 Starting the planning
 /////////////ROADMAP////////////
-Planning name : unnamed planning
-Current day index 10 / 14
-Current progress 0 % ( 4 / 5 Tasks done ) 
+| Planning name :           unnamed planning
+| Current day index :       10/14
+| Effective study days:     3 days
+| Total intellect time:     0.01 hours
+| Average intellect time:   0 hours
+| Current progress:         0 % ( 4 / 5 Tasks done )
 ------------- Week number 1 / 2 --------------
  -- Day 1 / 14 [Finished  2 / 2 ]
  -- Day 2 / 14 [Empty day]
@@ -368,9 +364,12 @@ Starting next day timer.. Time remaining : 00:00:00.0010000
 Starting from next day timer
 Starting the planning
 /////////////ROADMAP////////////
-Planning name : unnamed planning
-Current day index 11 / 14
-Current progress 0 % ( 4 / 5 Tasks done ) 
+| Planning name :           unnamed planning
+| Current day index :       11/14
+| Effective study days:     3 days
+| Total intellect time:     0.01 hours
+| Average intellect time:   0 hours
+| Current progress:         0 % ( 4 / 5 Tasks done )
 ------------- Week number 1 / 2 --------------
  -- Day 1 / 14 [Finished  2 / 2 ]
  -- Day 2 / 14 [Empty day]
@@ -400,9 +399,12 @@ Starting next day timer.. Time remaining : 00:00:00.0010000
 Starting from next day timer
 Starting the planning
 /////////////ROADMAP////////////
-Planning name : unnamed planning
-Current day index 12 / 14
-Current progress 0 % ( 4 / 5 Tasks done ) 
+| Planning name :           unnamed planning
+| Current day index :       12/14
+| Effective study days:     3 days
+| Total intellect time:     0.01 hours
+| Average intellect time:   0 hours
+| Current progress:         0 % ( 4 / 5 Tasks done )
 ------------- Week number 1 / 2 --------------
  -- Day 1 / 14 [Finished  2 / 2 ]
  -- Day 2 / 14 [Empty day]
@@ -432,9 +434,12 @@ Starting next day timer.. Time remaining : 00:00:00.0010000
 Starting from next day timer
 Starting the planning
 /////////////ROADMAP////////////
-Planning name : unnamed planning
-Current day index 13 / 14
-Current progress 0 % ( 4 / 5 Tasks done ) 
+| Planning name :           unnamed planning
+| Current day index :       13/14
+| Effective study days:     3 days
+| Total intellect time:     0.01 hours
+| Average intellect time:   0 hours
+| Current progress:         0 % ( 4 / 5 Tasks done )
 ------------- Week number 1 / 2 --------------
  -- Day 1 / 14 [Finished  2 / 2 ]
  -- Day 2 / 14 [Empty day]
@@ -464,9 +469,12 @@ Starting next day timer.. Time remaining : 00:00:00.0010000
 Starting from next day timer
 Starting the planning
 /////////////ROADMAP////////////
-Planning name : unnamed planning
-Current day index 14 / 14
-Current progress 0 % ( 4 / 5 Tasks done ) 
+| Planning name :           unnamed planning
+| Current day index :       14/14
+| Effective study days:     3 days
+| Total intellect time:     0.01 hours
+| Average intellect time:   0 hours
+| Current progress:         0 % ( 4 / 5 Tasks done )
 ------------- Week number 1 / 2 --------------
  -- Day 1 / 14 [Finished  2 / 2 ]
  -- Day 2 / 14 [Empty day]

@@ -64,7 +64,7 @@ namespace MotivatorEngine.PreTask
 
         public override string GetDescription()
         {
-            return "You can select the next AbstractTask you want to execute";
+            return "You can select the next task you want to execute";
         }
     }
 }

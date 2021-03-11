@@ -1,6 +1,7 @@
 ﻿using MotivatorPluginCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace MotivatorEngine
@@ -13,14 +14,16 @@ namespace MotivatorEngine
 
         }
 
+
+
         public override void ShowRoadmapDay(AbstractDay d)
         {
             Console.WriteLine( "======== Day Roadmap ===========");
             Console.WriteLine($"| Day\t\t: {planning.currentDayIndex+1}/{planning.GetDays().Count}");
             Console.WriteLine($"| Description\t: {d.description ?? "Empty"}");
             Console.WriteLine($"| Difficulty\t: {d.GetEstimatedDifficulty()}");
-            Console.WriteLine($"| Duration\t: {d.GetTotalDuration().TotalMilliseconds} minutes");
-            if(d.tasks != null)
+            Console.WriteLine($"| Duration\t: {d.GetTotalDuration().TotalMinutes} minutes");
+            if (d.tasks != null)
             {
                 Console.WriteLine($"| Progress\t: {d.GetFinishedTaskCount()}/{d.tasks.Count} ({d.GetProgressPercent()}%)");
                 Console.WriteLine($"| ---------------------");
@@ -51,18 +54,21 @@ namespace MotivatorEngine
             {
                 Console.WriteLine("| Empty Day");
             }
-            Console.WriteLine( "================================");
+            Console.WriteLine("=====================================");
         }
 
         public override void ShowRoadmap()
         {
             Console.WriteLine("/////////////ROADMAP////////////");
-            var days = this.planning.GetDays();
-            Console.WriteLine($"Planning name : {planning.name}");
-            Console.WriteLine($"Current day index {planning.currentDayIndex+1} / {days.Count}");
             var taskDoneCount = planning.GetTasks().FindAll(x => x.IsFinished).Count;
+            var days = this.planning.GetDays();
             var tCount =  planning.GetTasks().Count;
-            Console.WriteLine($"Current progress {taskDoneCount / tCount * 100} % ( {taskDoneCount} / {tCount} Tasks done ) ");
+            Console.WriteLine("| {0,-25} {1}", "Planning name :",planning.name);
+            Console.WriteLine("| {0,-25} {1}", "Current day index :", planning.currentDayIndex + 1 + "/" + days.Count);
+            Console.WriteLine("| {0,-25} {1} days" , "Effective study days:", days.FindAll(d => !d.isEmpty()).Count );
+            Console.WriteLine("| {0,-25} {1:0.##} hours", "Total intellect time:", days.Sum(d => d.GetTotalDuration().TotalHours));
+            Console.WriteLine("| {0,-25} {1:0.##} hours", "Average intellect time:", days.Sum(d => d.GetTotalDuration().TotalHours)/tCount);
+            Console.WriteLine("| {0,-25} {1}", "Current progress:", $"{taskDoneCount / tCount * 100} % ( {taskDoneCount} / {tCount} Tasks done )");
             var oldWeekNumber = -1;
             var planningWeekCount = planning.GetWeekCount();
             for(int i = 0; i < days.Count; i++)

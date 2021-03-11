@@ -31,6 +31,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
               "C:\\Users\\franc\\source\\repos\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj": {
                 "projectPath": "C:\\Users\\franc\\source\\repos\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj"
@@ -46,6 +47,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "MSTest.TestAdapter": {
               "target": "Package",
@@ -88,7 +90,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -119,6 +121,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
               "C:\\Users\\franc\\source\\repos\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj": {
                 "projectPath": "C:\\Users\\franc\\source\\repos\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj"
@@ -134,10 +137,15 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.12, )"
             }
           },
           "imports": [
@@ -158,7 +166,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -189,6 +197,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -200,6 +209,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
@@ -221,7 +231,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

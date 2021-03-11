@@ -95,3 +95,5 @@ C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanningTests\obj\Debug\net
 C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanningTests\obj\Debug\netcoreapp3.1\MotivatorEngineTests.genruntimeconfig.cache
 C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanningTests\bin\Debug\netcoreapp3.1\MotivatorPluginCore.dll
 C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanningTests\bin\Debug\netcoreapp3.1\MotivatorPluginCore.pdb
+C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanningTests\obj\Debug\netcoreapp3.1\MotivatorEngineTests.csproj.CoreCompileInputs.cache
+C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanningTests\bin\Debug\netcoreapp3.1\log4net.dll

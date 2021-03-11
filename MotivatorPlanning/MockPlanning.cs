@@ -74,6 +74,26 @@ namespace MotivatorEngine
         {
             // No plugins to select at the moment
         }
+
+        protected override AbstractDay CurrentDayIndexAlgorithm()
+        {
+            var curDay = GetCurrentDay();
+            // Set the correct date
+            if (currentDayIndex == 0 && lastFinishDate == DateTime.MinValue)
+            {
+                Console.WriteLine($">>>>>>>>>>>>>>>>>>>>> Beginning a new day : {currentDayIndex + 1}/{GetDays().Count}");
+                OnDayStarted(curDay);
+            }
+            else if (IsBeginningNewDay())
+            {
+                currentDayIndex++;
+                Console.WriteLine($">>>>>>>>>>>>>>>>>>>>> Beginning a new day : {currentDayIndex + 1}/{GetDays().Count}");
+                OnDayStarted(curDay);
+            }
+
+            return curDay;
+        }
+
         /// <summary>
         /// Convert to singleton ?
         /// </summary>

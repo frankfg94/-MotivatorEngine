@@ -1,5 +1,4 @@
-﻿using MotivatorEngine.PreTask;
-using MotivatorPluginCore;
+﻿using MotivatorPluginCore;
 using System;
 
 namespace MotivatorEngine
@@ -37,7 +36,7 @@ namespace MotivatorEngine
             Console.WriteLine("\n////////////Pre day menu////////////////");
             Console.WriteLine("This menu allows you to choose some options before starting the planning");
             var taskCount = (day.tasks != null) ? day.tasks.Count : 0;
-            ConsoleRoadmap r = new ConsoleRoadmap((AbstractPlanning)this);
+            ConsoleRoadmap r = new ConsoleRoadmap(this);
             r.ShowRoadmap();
             int curIndex = 1;
             foreach (var choice in choices)
@@ -49,7 +48,7 @@ namespace MotivatorEngine
                 else
                 {
                     Console.WriteLine("[Locked]\t" + choice.GetName());
-                    Console.WriteLine("\t\t|\t"+msg);
+                    Console.WriteLine("\t\t|\t" + msg);
                 }
                 curIndex++;
             }
@@ -94,6 +93,8 @@ namespace MotivatorEngine
                 Console.WriteLine("(!) Unrecognized number");
                 return SecureIntInput(min, max, chooseOptionText);
             }
+
+
         }
 
         public override AbstractPreMenu AskWaitTaskMenu(ref AbstractDay d, AbstractTask t)
@@ -129,15 +130,15 @@ namespace MotivatorEngine
             {
                 Console.WriteLine("Using choice ...");
                 var choice = choices[selectedChoice - 1];
-                if(!choice.autoCloseMenuAfterUse)
+                if (!choice.autoCloseMenuAfterUse)
                 {
-                    AskWaitTaskMenu(ref d,t);
+                    AskWaitTaskMenu(ref d, t);
                 }
                 else
                 {
                     Console.WriteLine("Using choice & auto closing wait menu...");
                 }
-                choice.Use(ref d,t);
+                choice.Use(ref d, t);
             }
             return preMenu;
         }
@@ -155,7 +156,7 @@ namespace MotivatorEngine
             Console.WriteLine("\n//////////////Pre Task menu////////////////");
             Console.WriteLine("This menu allows you to choose some options before starting the planning");
             int curIndex = 1;
-            ConsoleRoadmap r = new ConsoleRoadmap((AbstractPlanning)this);
+            ConsoleRoadmap r = new ConsoleRoadmap(this);
             r.ShowRoadmapDay(d);
             foreach (var choice in choices)
             {
@@ -176,7 +177,7 @@ namespace MotivatorEngine
             if (selectedChoice != quitChoice)
             {
                 Console.WriteLine("Using choice ...");
-                choices[selectedChoice -1].Use(ref d, t);
+                choices[selectedChoice - 1].Use(ref d, t);
                 AskPreTaskMenu(ref d, t);
             }
             return preMenu;
@@ -195,7 +196,7 @@ namespace MotivatorEngine
                 }
                 Console.Write("\n");
                 Console.WriteLine($"\t| Difficulty\t:\t {t.Infos.difficultyLvl}/5");
-                Console.WriteLine($"\t| Duration\t:\t {t.EstimatedDuration} minutes");
+                Console.WriteLine($"\t| Duration\t:\t {t.GetDuration()} minutes");
                 curTaskIndex++;
             }
             var cancelChoice = curTaskIndex;
@@ -219,8 +220,8 @@ namespace MotivatorEngine
             {
                 PlanningAbandonned += (s, e) =>
                   {
-                      Console.WriteLine(">> You abandonned the planning");
-                      return;
+                      Console.WriteLine("\n\n>> You abandonned the planning");
+                      Environment.Exit(0);
                   };
                 handlerSet = true;
             }
@@ -247,10 +248,41 @@ namespace MotivatorEngine
             }
         }
 
+        /// <summary>
+        /// Dynamic day calculation system 
+        /// What does that mean ? 
+        /// Simply, the time will go on if you don't do the planning.
+        /// For example if you have a planning that must last 2 weeks, and you don't anything for 1 week, then 
+        /// when you go back to your planning, you only have 1 week remaining instead of 2 weeks, because day calculation is now linked to the datetime system.
+        /// This can be useful if you need to finish a planning before a certain date.
+        /// </summary>
+        /// <returns></returns>
+        protected override AbstractDay CurrentDayIndexAlgorithm()
+        {
+            currentDayIndex = (int)(DateTime.Now - beginDate).TotalDays;
+            currentDayIndex += GetPluginsDayIndexModifiers(); // Get day decal from plugins
+            currentDayIndex += GetChoicesDayIndexModifiers(); // Get day decal from choice
+            var curDay = GetCurrentDay();
+            // Set the correct date
+            if (currentDayIndex == 0 && lastFinishDate == DateTime.MinValue)
+            {
+                Console.WriteLine($">>>>>>>>>>>>>>>>>>>>> Beginning a new day : {currentDayIndex + 1}/{GetDays().Count}");
+                OnDayStarted(curDay);
+            }
+            else if (IsBeginningNewDay())
+            {
+                currentDayIndex++;
+                Console.WriteLine($">>>>>>>>>>>>>>>>>>>>> Beginning a new day : {currentDayIndex + 1}/{GetDays().Count}");
+                OnDayStarted(curDay);
+            }
+
+            return curDay;
+        }
+
         public override TimeSpan GetTimeBeforeNewDay()
         {
             var timeBeforeNextDay = DateTime.Now.AddDays(1).Date - DateTime.Now;
-            if(waitBeforeDayTimeSpan)
+            if (waitBeforeDayTimeSpan)
             {
                 return timeBeforeNextDay;
             }
@@ -263,7 +295,7 @@ namespace MotivatorEngine
             if (waitBeforeTaskTimeSpan && next.ScheduledTime.HasValue)
             {
                 var timespan = next.ScheduledTime.Value - DateTime.Now.TimeOfDay;
-                if(timespan.Ticks<0)
+                if (timespan.Ticks < 0)
                 {
                     timespan = TimeSpan.FromMilliseconds(1);
                 }
@@ -278,7 +310,7 @@ namespace MotivatorEngine
             int quitChoice = plugins.Count + 1;
             foreach (var p in plugins)
             {
-                if(!pluginProgressSet)
+                if (!pluginProgressSet)
                 {
                     p.LoadProgressChanged += (s, e) =>
                     {
@@ -306,20 +338,20 @@ namespace MotivatorEngine
             }
             Console.WriteLine($"{quitChoice}) Close & continue");
             var input = SecureIntInput(1, quitChoice, "Choose your plugin? ");
-            if(input == quitChoice)
+            if (input == quitChoice)
             {
                 Console.WriteLine("Finished plugin selection");
             }
             else if (input < quitChoice)
             {
-                if(plugins[input-1].IsSelectable(out string reason))
+                if (plugins[input - 1].IsSelectable(out string reason))
                 {
-                    Console.WriteLine("Using : " + plugins[input - 1].name);
+                    Console.WriteLine($"Using : {plugins[input - 1].name}");
                     plugins[input - 1].UsePlanningStartFirstTime();
                 }
                 else
                 {
-                    Console.WriteLine("Can't use plugin | Reason : " + reason);
+                    Console.WriteLine($"Can't use plugin | Reason : {reason}");
                 }
                 // Problem loading is async for console, ugly
                 SelectPlugins();

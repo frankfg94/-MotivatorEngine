@@ -19,7 +19,7 @@ namespace MotivatorEngine.PreTask
 
         public override string GetDescription()
         {
-            return "Skip this Task without any consequences";
+            return "Skip this task without any consequences";
         }
 
         public override string GetName()

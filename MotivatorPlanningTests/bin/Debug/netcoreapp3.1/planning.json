@@ -24,7 +24,7 @@
   "autofinishWhenNoTasks": true,
   "description": "This is a mock planning generated for testing only",
   "isFinished": false,
-  "lastFinishDate": "2020-11-21T21:53:06.2523487+01:00",
+  "lastFinishDate": "2021-03-11T19:39:59.0447624+01:00",
   "weeks": [
     {
       "description": null,
@@ -310,5 +310,5 @@
   "currentDayIndex": 13,
   "plugins": null,
   "noTimerBeforeTask": false,
-  "beginDate": "2020-11-21T21:53:06.0042153+01:00"
+  "beginDate": "2021-03-11T19:39:58.9951372+01:00"
 }
