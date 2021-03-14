@@ -22,6 +22,99 @@ namespace MotivatorEngine
             return AskConfirmation(text);
         }
 
+        public override string AskToTypeText()
+        {
+            Console.Write("You text : ");
+            return Console.ReadLine();
+        }
+
+        public override Form AskForm(Form form)
+        {
+            form.date = DateTime.Now;
+            Console.WriteLine("////////////////////////////////////////////////");
+            Console.WriteLine($"/////// Motivator Form : {form.formTitle} /////");
+            Console.WriteLine("////////////////////////////////////////////////");
+            form.formDatas.ForEach(d =>
+            {
+                if (d is TextFormData data)
+                {
+                    Console.WriteLine("///// Title   : " + data.title);
+                    Console.WriteLine("/ Description : " + data.description);
+                    string s = AskToTypeText();
+                    data.response = s;
+                    Console.WriteLine("////////////////////////////////");
+                }
+                else if (d is YesNoFormData dataYN)
+                {
+                    Console.WriteLine("///// Yes no question");
+                    if (AskConfirmation(dataYN.title))
+                    {
+                        dataYN.response = true;
+                    }
+                    else
+                    {
+                        dataYN.response = false;
+                    }
+                    Console.WriteLine("/////////////////////");
+                }
+                else if (d is RadioFormData dataRadio)
+                {
+                    Console.WriteLine("Radio form data is not implemented yet");
+                }
+            });
+            Console.WriteLine("Form complete");
+            Console.WriteLine("//////////////////////////////////");
+            return form;
+        }
+
+        public override AbstractPreMenu AskPostDayMenu(ref AbstractDay day)
+        {
+            var choices = preMenu.availableChoices.FindAll(x => x.count > 0 && x.ShowAfterDay());
+            if (choices.Count == 0)
+            {
+                Console.WriteLine("Skipping Post Day menu because no options available");
+                return preMenu;
+            }
+
+            int selectedChoice = -1;
+
+            Console.WriteLine("\n////////////Post day menu////////////////");
+            Console.WriteLine("This menu allows you to choose some options before finishing your day");
+            var taskCount = (day.tasks != null) ? day.tasks.Count : 0;
+            int curIndex = 1;
+            foreach (var choice in choices)
+            {
+                if (choice.IsSelectable(out string msg))
+                {
+                    Console.WriteLine(curIndex + ")\t" + choice.GetName() + $" {choice.count}/{choice.maxCount}");
+                }
+                else
+                {
+                    Console.WriteLine("[Locked]\t" + choice.GetName());
+                    Console.WriteLine("\t\t|\t" + msg);
+                }
+                curIndex++;
+            }
+            int quitChoice = curIndex;
+            Console.WriteLine(quitChoice + ")\tClose the menu and finish the day");
+            selectedChoice = SecureIntInput(1, curIndex, "Choose your option before starting the day");
+            if (selectedChoice != quitChoice)
+            {
+                Console.WriteLine("Using choice ...");
+                if (choices[selectedChoice - 1].IsSelectable(out string errorMsg))
+                {
+                    choices[selectedChoice - 1].Use(ref day, null);
+                    AskPostDayMenu(ref day);
+                }
+                else
+                {
+                    Console.WriteLine("This feature cannot be used at the moment, try something else :\n" + errorMsg);
+                    AskPostDayMenu(ref day);
+                }
+            }
+            return preMenu;
+        }
+
         public override AbstractPreMenu AskPreDayMenu(ref AbstractDay day)
         {
             var choices = preMenu.availableChoices.FindAll(x => x.count > 0 && x.ShowBeforeDay());
@@ -172,7 +265,7 @@ namespace MotivatorEngine
                 curIndex++;
             }
             int quitChoice = curIndex;
-            Console.WriteLine(quitChoice + ")\tClose the menu and continue");
+            Console.WriteLine(quitChoice + ")\tClose the menu and start task");
             selectedChoice = SecureIntInput(1, curIndex, "Choose your option before starting the task : " + t.Infos.name);
             if (selectedChoice != quitChoice)
             {

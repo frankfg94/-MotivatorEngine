@@ -5,6 +5,7 @@ using System.Text;
 
 namespace MotivatorEngine.PreTask
 {
+    // TODO : implement
     public class ShortPauseChoice : PreMenuChoice
     {
         public List<Delayer> delayers;

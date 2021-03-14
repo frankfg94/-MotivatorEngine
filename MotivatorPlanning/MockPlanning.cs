@@ -25,6 +25,13 @@ namespace MotivatorEngine
             return preMenu;
         }
 
+        public override AbstractPreMenu AskPostDayMenu(ref AbstractDay day)
+        {
+            Console.WriteLine("[IA] Selecting the menu options when we finished the day...");
+            return preMenu;
+        }
+
+
         public override AbstractPreMenu AskPreTaskMenu(ref AbstractDay d, AbstractTask taskToDo)
         {
             Console.WriteLine("[IA] Selecting the options for the task..." + (d.tasks.FindAll(t => t.IsFinished).Count+1) + "/" + d.tasks.Count);
@@ -115,6 +122,18 @@ namespace MotivatorEngine
         protected override AbstractRoadmap InstantiateRoadmap()
         {
             return new ConsoleRoadmap(this);
+        }
+
+        public override Form AskForm(Form data)
+        {
+            Console.WriteLine("[IA] Not completing the form");
+            return data;
+        }
+
+        public override string AskToTypeText()
+        {
+            Console.WriteLine("[IA] Typing a random text");
+            return "typed text";
         }
     }
 }
