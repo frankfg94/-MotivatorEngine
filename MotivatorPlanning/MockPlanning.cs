@@ -82,7 +82,7 @@ namespace MotivatorEngine
             // No plugins to select at the moment
         }
 
-        protected override AbstractDay CurrentDayIndexAlgorithm()
+        public override AbstractDay CurrentDayIndexAlgorithm()
         {
             var curDay = GetCurrentDay();
             // Set the correct date

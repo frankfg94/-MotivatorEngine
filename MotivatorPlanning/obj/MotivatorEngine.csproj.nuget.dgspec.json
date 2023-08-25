@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\franc\\source\\repos\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj": {}
+    "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj": {}
   },
   "projects": {
-    "C:\\Users\\franc\\source\\repos\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj": {
+    "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\franc\\source\\repos\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj",
+        "projectUniqueName": "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj",
         "projectName": "MotivatorEngine",
-        "projectPath": "C:\\Users\\franc\\source\\repos\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj",
+        "projectPath": "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj",
         "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\franc\\source\\repos\\MotivatorEngine\\MotivatorPlanning\\obj\\",
+        "outputPath": "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorEngine\\MotivatorPlanning\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\franc\\source\\repos\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj": {
-                "projectPath": "C:\\Users\\franc\\source\\repos\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj"
+              "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj": {
+                "projectPath": "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj"
               }
             }
           }
@@ -71,18 +71,18 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\franc\\source\\repos\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj": {
+    "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\franc\\source\\repos\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj",
+        "projectUniqueName": "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj",
         "projectName": "MotivatorPluginCore",
-        "projectPath": "C:\\Users\\franc\\source\\repos\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj",
+        "projectPath": "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj",
         "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\franc\\source\\repos\\MotivatorPluginCore\\MotivatorPluginCore\\obj\\",
+        "outputPath": "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorPluginCore\\MotivatorPluginCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -131,7 +131,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

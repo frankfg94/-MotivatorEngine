@@ -70,7 +70,7 @@ namespace MotivatorEngine
                     plugin.planning = p;
                 }
             }
-
+            p.CurrentDayIndexAlgorithm();
             return p;
         }
 

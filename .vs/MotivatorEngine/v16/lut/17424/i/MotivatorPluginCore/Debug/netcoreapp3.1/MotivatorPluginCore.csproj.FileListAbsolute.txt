@@ -1,7 +1,0 @@
-C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\b\MotivatorPluginCore\Debug\netcoreapp3.1\MotivatorPluginCore.deps.json
-C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\b\MotivatorPluginCore\Debug\netcoreapp3.1\MotivatorPluginCore.dll
-C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\i\MotivatorPluginCore\Debug\netcoreapp3.1\MotivatorPluginCore.csprojAssemblyReference.cache
-C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\i\MotivatorPluginCore\Debug\netcoreapp3.1\MotivatorPluginCore.AssemblyInfoInputs.cache
-C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\i\MotivatorPluginCore\Debug\netcoreapp3.1\MotivatorPluginCore.AssemblyInfo.cs
-C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\i\MotivatorPluginCore\Debug\netcoreapp3.1\MotivatorPluginCore.csproj.CopyComplete
-C:\Users\franc\source\repos\MotivatorEngine\.vs\MotivatorEngine\v16\lut\17424\i\MotivatorPluginCore\Debug\netcoreapp3.1\MotivatorPluginCore.dll

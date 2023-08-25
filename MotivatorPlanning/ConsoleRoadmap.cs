@@ -18,8 +18,14 @@ namespace MotivatorEngine
 
         public override void ShowRoadmapDay(AbstractDay d)
         {
+            if(d == null)
+            {
+                Console.WriteLine("(!) Could not load the planning for the day because the day is unknown, the planning is probably finished");
+                return;
+            }
+            var days = this.planning.GetDays();
             Console.WriteLine( "======== Day Roadmap ===========");
-            Console.WriteLine($"| Day\t\t: {planning.currentDayIndex+1}/{planning.GetDays().Count}");
+            Console.WriteLine("| {0,-25} {1}", "Current day index :", planning.currentDayIndex + 1 + "/" + days.Count);
             Console.WriteLine($"| Description\t: {d.description ?? "Empty"}");
             Console.WriteLine($"| Difficulty\t: {d.GetEstimatedDifficulty()}");
             Console.WriteLine($"| Duration\t: {d.GetTotalDuration().TotalMinutes} minutes");
@@ -39,8 +45,20 @@ namespace MotivatorEngine
                     Console.Write("\n");
                     Console.WriteLine($"| \t|\tDescription\t: {t.Infos.shortDescription}");
                     Console.WriteLine($"| \t|\tDifficulty\t: {t.Infos.difficultyLvl}/5");
-                    Console.WriteLine($"| \t|\tDuration\t: {t.Infos.durationLvl} ({d.GetTotalDuration().TotalMilliseconds} min)");
-                    if(t.ScheduledTime.HasValue)
+                    Console.WriteLine($"| \t|\tDuration\t: {t.Infos.durationLvl} ({Math.Round(t.GetDuration().TotalMinutes,1)} min)");
+                    if (t.isFinished)
+                    {
+                        if(t.FinalDuration != null)
+                        {
+                           Console.WriteLine($"| \t|\tFinal Duration\t: {Math.Round(t.FinalDuration.TotalMinutes, 1)} min");
+                           
+                        } 
+                        else
+                        {
+                            Console.WriteLine($"| \t|\tFinal Duration\t: 0 min");
+                        }
+                    }
+                    if (t.ScheduledTime.HasValue)
                     {
                         Console.WriteLine($"| \t|\tStarts at\t: {t.ScheduledTime}");
                     }
@@ -68,7 +86,7 @@ namespace MotivatorEngine
             Console.WriteLine("| {0,-25} {1} days" , "Effective study days:", days.FindAll(d => !d.isEmpty()).Count );
             Console.WriteLine("| {0,-25} {1:0.##} hours", "Total intellect time:", days.Sum(d => d.GetTotalDuration().TotalHours));
             Console.WriteLine("| {0,-25} {1:0.##} hours", "Average intellect time:", days.Sum(d => d.GetTotalDuration().TotalHours)/tCount);
-            Console.WriteLine("| {0,-25} {1}", "Current progress:", $"{taskDoneCount / tCount * 100} % ( {taskDoneCount} / {tCount} Tasks done )");
+            Console.WriteLine("| {0,-25} {1}", "Current progress:", $"{taskDoneCount * 100 / tCount } % ( {taskDoneCount} / {tCount} Tasks done )");
             var oldWeekNumber = -1;
             var planningWeekCount = planning.GetWeekCount();
             for(int i = 0; i < days.Count; i++)
@@ -112,6 +130,7 @@ namespace MotivatorEngine
                 Console.Write("\t\t"+curDay.tasks[0].ScheduledTime.Value);
                 Console.Write("\n");
             }
+            Console.WriteLine("///////////////////////////");
         }
 
         public override string GetRoadmapText()

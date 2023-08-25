@@ -33,6 +33,7 @@ namespace MotivatorEngine.PreTask.FeedbackChoice
                                  .Build();
             preMenu.planning.AskForm(f);
             preMenu.planning.Save();
+            FeedbackHelper.GetInstance().AddAndSaveToFile(f);
             cancelUse = false;
         }
     }

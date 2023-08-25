@@ -3,6 +3,10 @@ using System;
 
 namespace MotivatorEngine
 {
+    /// <summary>
+    /// Planning made to run with a simple console application (no GUI). However, tasks are started with Wpf by default.
+    /// Also, day calculation is synced with real time (See CurDayIndex function). It means that the planning date will advance, and you can miss day of works.
+    /// </summary>
     public class ConsolePlanning : MockPlanning
     {
         public bool waitBeforeTaskTimeSpan = true;
@@ -265,7 +269,7 @@ namespace MotivatorEngine
                 curIndex++;
             }
             int quitChoice = curIndex;
-            Console.WriteLine(quitChoice + ")\tClose the menu and start task");
+            Console.WriteLine(quitChoice + ")\tClose the menu and start task " + (t.ScheduledTime.HasValue ? $"(Scheduled at {t.ScheduledTime.Value})" : string.Empty) );
             selectedChoice = SecureIntInput(1, curIndex, "Choose your option before starting the task : " + t.Infos.name);
             if (selectedChoice != quitChoice)
             {
@@ -350,16 +354,16 @@ namespace MotivatorEngine
         /// This can be useful if you need to finish a planning before a certain date.
         /// </summary>
         /// <returns></returns>
-        protected override AbstractDay CurrentDayIndexAlgorithm()
+        public override AbstractDay CurrentDayIndexAlgorithm()
         {
-            currentDayIndex = (int)(DateTime.Now - beginDate).TotalDays;
+            currentDayIndex = (int)(DateTime.Now - beginDate.Date).TotalDays;
             currentDayIndex += GetPluginsDayIndexModifiers(); // Get day decal from plugins
             currentDayIndex += GetChoicesDayIndexModifiers(); // Get day decal from choice
             var curDay = GetCurrentDay();
             // Set the correct date
             if (currentDayIndex == 0 && lastFinishDate == DateTime.MinValue)
             {
-                Console.WriteLine($">>>>>>>>>>>>>>>>>>>>> Beginning a new day : {currentDayIndex + 1}/{GetDays().Count}");
+                Console.WriteLine($">>>>>>>>>>>>>>>>>>>>> Beginning the first day : {currentDayIndex + 1}/{GetDays().Count}");
                 OnDayStarted(curDay);
             }
             else if (IsBeginningNewDay())
@@ -374,12 +378,11 @@ namespace MotivatorEngine
 
         public override TimeSpan GetTimeBeforeNewDay()
         {
-            var timeBeforeNextDay = DateTime.Now.AddDays(1).Date - DateTime.Now;
             if (waitBeforeDayTimeSpan)
             {
-                return timeBeforeNextDay;
+                return DateTime.Now.AddDays(1).Date - DateTime.Now;
             }
-            return TimeSpan.FromMilliseconds(1);
+            return TimeSpan.Zero;
         }
 
         public override TimeSpan GetTimeBeforeNewTask()
@@ -390,11 +393,11 @@ namespace MotivatorEngine
                 var timespan = next.ScheduledTime.Value - DateTime.Now.TimeOfDay;
                 if (timespan.Ticks < 0)
                 {
-                    timespan = TimeSpan.FromMilliseconds(1);
+                    timespan = TimeSpan.Zero;
                 }
                 return timespan;
             }
-            return base.GetTimeBeforeNewTask();
+            return TimeSpan.Zero;
         }
         public override void SelectPlugins()
         {

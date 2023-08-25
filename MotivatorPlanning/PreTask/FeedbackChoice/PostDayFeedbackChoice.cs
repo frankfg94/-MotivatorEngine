@@ -1,6 +1,7 @@
 ﻿using MotivatorPluginCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace MotivatorEngine.PreTask.FeedbackChoice
@@ -32,6 +33,7 @@ namespace MotivatorEngine.PreTask.FeedbackChoice
                                  .Build();
             preMenu.planning.AskForm(f);
             preMenu.planning.Save();
+            FeedbackHelper.GetInstance().AddAndSaveToFile(f);
             cancelUse = false;
         }
     }
