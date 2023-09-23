@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj": {}
+    "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj": {}
   },
   "projects": {
-    "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj": {
+    "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj",
+        "projectUniqueName": "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj",
         "projectName": "MotivatorEngine",
-        "projectPath": "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj",
+        "projectPath": "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj",
         "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorEngine\\MotivatorPlanning\\obj\\",
+        "outputPath": "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorEngine\\MotivatorPlanning\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj": {
-                "projectPath": "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj"
+              "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj": {
+                "projectPath": "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj"
               }
             }
           }
@@ -59,7 +64,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -71,21 +77,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj": {
+    "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj",
+        "projectUniqueName": "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj",
         "projectName": "MotivatorPluginCore",
-        "projectPath": "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj",
+        "projectPath": "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj",
         "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorPluginCore\\MotivatorPluginCore\\obj\\",
+        "outputPath": "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorPluginCore\\MotivatorPluginCore\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -93,6 +103,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -122,7 +133,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -131,7 +143,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

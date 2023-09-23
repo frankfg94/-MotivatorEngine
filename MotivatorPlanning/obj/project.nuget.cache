@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NB9WPO3LBcPv15pgnzBNTaO/ENLEb1lAcnWv7irpE6e5l1eMWibavnOOcjVtDosd31aguG7cp+E8Jk+BnUnQhA==",
+  "dgSpecHash": "nu00hY8vCk8LH/nQr18BjqGo5rSpI9A9h0O9Xnr76nJO2PSTF3Ab55alDHH3xH+eI8+jXVaaGkLLL22mc/lUtw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\franc\\source\\repos\\WebLearn\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj",
+  "projectFilePath": "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorEngine\\MotivatorPlanning\\MotivatorEngine.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\franc\\.nuget\\packages\\log4net\\2.0.12\\log4net.2.0.12.nupkg.sha512",
     "C:\\Users\\franc\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",

@@ -41,3 +41,16 @@ C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanning\obj\Debug\netcorea
 C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.pdb
 C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.csproj.AssemblyReference.cache
 C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\bin\Debug\netcoreapp3.1\MotivatorEngine.deps.json
+C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\bin\Debug\netcoreapp3.1\MotivatorEngine.dll
+C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\bin\Debug\netcoreapp3.1\MotivatorEngine.pdb
+C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\bin\Debug\netcoreapp3.1\MotivatorPluginCore.dll
+C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\bin\Debug\netcoreapp3.1\MotivatorPluginCore.pdb
+C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.csproj.AssemblyReference.cache
+C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.AssemblyInfoInputs.cache
+C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.AssemblyInfo.cs
+C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.csproj.CoreCompileInputs.cache
+C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.csproj.CopyComplete
+C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.dll
+C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.pdb
