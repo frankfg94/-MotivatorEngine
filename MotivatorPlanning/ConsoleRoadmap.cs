@@ -28,7 +28,7 @@ namespace MotivatorEngine
             Console.WriteLine("| {0,-25} {1}", "Current day index :", planning.currentDayIndex + 1 + "/" + days.Count);
             Console.WriteLine($"| Description\t: {d.description ?? "Empty"}");
             Console.WriteLine($"| Difficulty\t: {d.GetEstimatedDifficulty()}");
-            Console.WriteLine($"| Duration\t: {d.GetTotalDuration().TotalMinutes} minutes");
+            Console.WriteLine($"| Duration\t: {Math.Round(d.GetTotalDuration().TotalMinutes,1)} minutes");
             if (d.tasks != null)
             {
                 Console.WriteLine($"| Progress\t: {d.GetFinishedTaskCount()}/{d.tasks.Count} ({d.GetProgressPercent()}%)");

@@ -73,6 +73,7 @@ namespace MotivatorEngine
 
         public override AbstractPreMenu AskPostDayMenu(ref AbstractDay day)
         {
+            preMenu.isPostMenuOpen = true;
             var choices = preMenu.availableChoices.FindAll(x => x.count > 0 && x.ShowAfterDay());
             if (choices.Count == 0)
             {
@@ -82,8 +83,8 @@ namespace MotivatorEngine
 
             int selectedChoice = -1;
 
-            Console.WriteLine("\n////////////Post day menu////////////////");
-            Console.WriteLine("This menu allows you to choose some options before finishing your day");
+            Console.WriteLine("\n////////////Post day menu " + (currentDayIndex +1) + "/" +GetDays().Count+ "////////////////");
+            Console.WriteLine("This menu allows you to choose some options before finishing your day\n");
             var taskCount = (day.tasks != null) ? day.tasks.Count : 0;
             int curIndex = 1;
             foreach (var choice in choices)
@@ -108,7 +109,10 @@ namespace MotivatorEngine
                 if (choices[selectedChoice - 1].IsSelectable(out string errorMsg))
                 {
                     choices[selectedChoice - 1].Use(ref day, null);
-                    AskPostDayMenu(ref day);
+                    if (choices[selectedChoice -1 ].autoCloseMenuAfterUse != true)
+                    {
+                        AskPostDayMenu(ref day);
+                    }
                 }
                 else
                 {
@@ -116,6 +120,7 @@ namespace MotivatorEngine
                     AskPostDayMenu(ref day);
                 }
             }
+            preMenu.isPostMenuOpen = false;
             return preMenu;
         }
 

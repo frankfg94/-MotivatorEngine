@@ -34,7 +34,8 @@ namespace MotivatorEngine.PreTask.Choices
                 }
                 else
                 {
-                    msg = "The day must be empty to be skipped";
+                    // TODO make empty or finished optional
+                    msg = "The day must be empty or finished to be skipped";
                 }
             }
             else
@@ -62,6 +63,12 @@ namespace MotivatorEngine.PreTask.Choices
                 cancelUse = false;
                 preMenu.planning.SkipDaysUntilTask(d);
                 d = preMenu.planning.GetCurrentDay();
+                if(preMenu.isPostMenuOpen)
+                {
+                    // We want to start the next day directly without waiting
+                    preMenu.planning.overrideTimeBeforeNewDay = TimeSpan.FromMilliseconds(1);
+                }
+                Console.WriteLine("Current day after skip  is now : " + (preMenu.planning.currentDayIndex+1));
             }
             else
             {
