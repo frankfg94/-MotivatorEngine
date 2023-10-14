@@ -33,8 +33,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj": {
-                "projectPath": "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj"
+              "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorCore.csproj": {
+                "projectPath": "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorCore.csproj"
               }
             }
           }
@@ -77,16 +77,16 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj": {
+    "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj",
-        "projectName": "MotivatorPluginCore",
-        "projectPath": "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorPluginCore.csproj",
+        "projectUniqueName": "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorCore.csproj",
+        "projectName": "MotivatorCore",
+        "projectPath": "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorPluginCore\\MotivatorPluginCore\\MotivatorCore.csproj",
         "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\franc\\source\\repos\\Motivator2\\MotivatorPluginCore\\MotivatorPluginCore\\obj\\",
         "projectStyle": "PackageReference",
@@ -122,6 +122,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.CodeAnalysis.CSharp": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "Microsoft.CodeAnalysis.Common": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
@@ -143,7 +151,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

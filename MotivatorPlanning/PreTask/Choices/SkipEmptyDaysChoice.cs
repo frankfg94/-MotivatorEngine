@@ -7,10 +7,13 @@ namespace MotivatorEngine.PreTask.Choices
 {
     public class SkipEmptyDaysChoice : PreMenuChoice
     {
+        private int dayNumber;
+
         public SkipEmptyDaysChoice()
         {
             showBeforeDay = true;
             showBeforeTask = false;
+            showAfterDay = true;
             autoCloseMenuAfterUse = true;
         }
 
@@ -24,6 +27,11 @@ namespace MotivatorEngine.PreTask.Choices
                     msg = null;
                     return true;
                 } 
+                else if (curDay.AreAllTasksFinished())
+                {
+                    msg = null;
+                    return true;
+                }
                 else
                 {
                     msg = "The day must be empty to be skipped";
@@ -43,12 +51,12 @@ namespace MotivatorEngine.PreTask.Choices
 
         public override string GetName()
         {
-            return "Start next day with Tasks (jump X days)";
+            return "Start the next day with Tasks (jump "+ (preMenu.planning.GetNextNonEmptyDayIndex(preMenu.planning.GetCurrentDay()) + 1) + " days)";
         }
 
         protected override void _Use(ref AbstractDay d, AbstractTask t, out bool cancelUse)
         {
-            var dayNumber = preMenu.planning.GetNextNonEmptyDayIndex(d) + 1;
+            this.dayNumber = preMenu.planning.GetNextNonEmptyDayIndex(d) + 1;
             if(preMenu.planning.AskConfirmation($"Do you want to jump to day number {dayNumber}, current number is {preMenu.planning.currentDayIndex} ? This is not reversible"))
             {
                 cancelUse = false;

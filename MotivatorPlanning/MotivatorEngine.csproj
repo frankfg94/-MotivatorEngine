@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MotivatorPluginCore\MotivatorPluginCore\MotivatorPluginCore.csproj" />
+    <ProjectReference Include="..\..\MotivatorPluginCore\MotivatorPluginCore\MotivatorCore.csproj" />
   </ItemGroup>
 
 </Project>
