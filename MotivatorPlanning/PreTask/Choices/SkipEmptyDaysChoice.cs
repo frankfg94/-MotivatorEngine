@@ -1,6 +1,7 @@
 ﻿using MotivatorPluginCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace MotivatorEngine.PreTask.Choices
@@ -15,6 +16,7 @@ namespace MotivatorEngine.PreTask.Choices
             showBeforeTask = false;
             showAfterDay = true;
             autoCloseMenuAfterUse = true;
+            keepIncrementingDay = false; // We chose to increment the day manually with this choice, so no need to increment in the planning
         }
 
         public override bool IsSelectable(out string msg)
@@ -27,8 +29,14 @@ namespace MotivatorEngine.PreTask.Choices
                     msg = null;
                     return true;
                 } 
+                else if(curDay == preMenu.planning.GetDays().Last())
+                {
+                     msg = "We are the last day of this planning, can't skip to other days";
+                     return false;
+                }
                 else if (curDay.AreAllTasksFinished())
                 {
+
                     msg = null;
                     return true;
                 }
@@ -52,13 +60,18 @@ namespace MotivatorEngine.PreTask.Choices
 
         public override string GetName()
         {
-            return "Start the next day with Tasks (jump "+ (preMenu.planning.GetNextNonEmptyDayIndex(preMenu.planning.GetCurrentDay()) + 1) + " days)";
+            var futureDay = preMenu.planning.GetNextNonEmptyDayIndex(preMenu.planning.GetCurrentDay()) + 1;
+            if(futureDay <= 0)
+            {
+                return "Start the next day with Tasks";
+            }
+            return "Start the next day with Tasks (jump to day number " + futureDay + ")";
         }
 
         protected override void _Use(ref AbstractDay d, AbstractTask t, out bool cancelUse)
         {
             this.dayNumber = preMenu.planning.GetNextNonEmptyDayIndex(d) + 1;
-            if(preMenu.planning.AskConfirmation($"Do you want to jump to day number {dayNumber}, current number is {preMenu.planning.currentDayIndex} ? This is not reversible"))
+            if(preMenu.planning.AskConfirmation($"Do you want to jump to day number {dayNumber}, current number is {preMenu.planning.currentDayIndex+1} ? This is not reversible"))
             {
                 cancelUse = false;
                 preMenu.planning.SkipDaysUntilTask(d);

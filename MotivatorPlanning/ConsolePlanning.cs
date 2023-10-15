@@ -1,5 +1,6 @@
 ﻿using MotivatorPluginCore;
 using System;
+using System.Linq;
 
 namespace MotivatorEngine
 {
@@ -11,6 +12,10 @@ namespace MotivatorEngine
     {
         public bool waitBeforeTaskTimeSpan = true;
         public bool waitBeforeDayTimeSpan = true;
+
+        // TODO : set private as possible without preventing serialization
+
+
         public override bool AskConfirmation(string text)
         {
             Console.WriteLine($"{text} (y/n) ");
@@ -101,7 +106,13 @@ namespace MotivatorEngine
                 curIndex++;
             }
             int quitChoice = curIndex;
-            Console.WriteLine(quitChoice + ")\tClose the menu and finish the day");
+            if(day == GetDays().Last())
+            {
+                Console.WriteLine(quitChoice + ")\tClose the menu and finish this planning, congrats!");
+            } else
+            {
+                Console.WriteLine(quitChoice + ")\tClose the menu and finish the day");
+            }
             selectedChoice = SecureIntInput(1, curIndex, "Choose your option before starting the day");
             if (selectedChoice != quitChoice)
             {
@@ -195,8 +206,6 @@ namespace MotivatorEngine
                 Console.WriteLine("(!) Unrecognized number");
                 return SecureIntInput(min, max, chooseOptionText);
             }
-
-
         }
 
         public override AbstractPreMenu AskWaitTaskMenu(ref AbstractDay d, AbstractTask t)
@@ -361,7 +370,7 @@ namespace MotivatorEngine
         /// <returns></returns>
         public override AbstractDay CurrentDayIndexAlgorithm()
         {
-            currentDayIndex = (int)(DateTime.Now - beginDate.Date).TotalDays;
+            currentDayIndex = (int)(GetCurrentDate() - beginDate.Date).TotalDays;
             currentDayIndex += GetPluginsDayIndexModifiers(); // Get day decal from plugins
             currentDayIndex += GetChoicesDayIndexModifiers(); // Get day decal from choice
             var curDay = GetCurrentDay();
@@ -373,7 +382,9 @@ namespace MotivatorEngine
             }
             else if (IsBeginningNewDay())
             {
-                currentDayIndex++;
+                if(preMenu.availableChoices.FindIndex((choice) => choice.keepIncrementingDay == true) > -1) {
+                    currentDayIndex++;
+                }
                 Console.WriteLine($">>>>>>>>>>>>>>>>>>>>> Beginning a new day : {currentDayIndex + 1}/{GetDays().Count}");
                 OnDayStarted(curDay);
             }
@@ -385,7 +396,7 @@ namespace MotivatorEngine
         {
             if (waitBeforeDayTimeSpan)
             {
-                return DateTime.Now.AddDays(1).Date - DateTime.Now;
+                return GetCurrentDate().AddDays(1).Date - GetCurrentDate();
             }
             return TimeSpan.Zero;
         }
@@ -395,7 +406,7 @@ namespace MotivatorEngine
             var next = GetNextPlannedTask();
             if (waitBeforeTaskTimeSpan && next.ScheduledTime.HasValue)
             {
-                var timespan = next.ScheduledTime.Value - DateTime.Now.TimeOfDay;
+                var timespan = next.ScheduledTime.Value - GetCurrentDate().TimeOfDay;
                 if (timespan.Ticks < 0)
                 {
                     timespan = TimeSpan.Zero;
