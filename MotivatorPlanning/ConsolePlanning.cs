@@ -373,6 +373,10 @@ namespace MotivatorEngine
             currentDayIndex = (int)(GetCurrentDate() - beginDate.Date).TotalDays;
             currentDayIndex += GetPluginsDayIndexModifiers(); // Get day decal from plugins
             currentDayIndex += GetChoicesDayIndexModifiers(); // Get day decal from choice
+            if(currentDayIndex > GetDays().Count - 1 )
+            {
+                return null;
+            }
             var curDay = GetCurrentDay();
             // Set the correct date
             if (currentDayIndex == 0 && lastFinishDate == DateTime.MinValue)
