@@ -49,8 +49,9 @@ C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\obj\Deb
 C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.AssemblyInfoInputs.cache
 C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.AssemblyInfo.cs
 C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.csproj.CoreCompileInputs.cache
-C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.csproj.CopyComplete
 C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.dll
 C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.pdb
 C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\bin\Debug\netcoreapp3.1\MotivatorCore.dll
 C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\bin\Debug\netcoreapp3.1\MotivatorCore.pdb
+C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\MotivatorEngine.sourcelink.json
+C:\Users\franc\source\repos\Motivator2\MotivatorEngine\MotivatorPlanning\obj\Debug\netcoreapp3.1\Motivato.768F6C26.Up2Date
