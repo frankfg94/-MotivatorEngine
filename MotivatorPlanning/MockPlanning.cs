@@ -1,15 +1,14 @@
-﻿using MotivatorEngine.PreTask;
-using MotivatorPluginCore;
+﻿using MotivatorPluginCore;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading;
 
 namespace MotivatorEngine
 {
     public class MockPlanning : AbstractPlanning
     {
-        public MockPlanning() {
+        public bool showCurrentDayIndexText = true;
+        public MockPlanning()
+        {
             description = "This is a mock planning generated for testing only";
         }
 
@@ -34,7 +33,7 @@ namespace MotivatorEngine
 
         public override AbstractPreMenu AskPreTaskMenu(ref AbstractDay d, AbstractTask taskToDo)
         {
-            Console.WriteLine("[IA] Selecting the options for the task..." + (d.tasks.FindAll(t => t.IsFinished).Count+1) + "/" + d.tasks.Count);
+            Console.WriteLine("[IA] Selecting the options for the task..." + (d.tasks.FindAll(t => t.IsFinished).Count + 1) + "/" + d.tasks.Count);
             return preMenu;
         }
 
@@ -68,7 +67,7 @@ namespace MotivatorEngine
 
         public override void HandlePluginEvents(List<IPlugin> plugins)
         {
-            foreach (var p in plugins)
+            foreach (IPlugin p in plugins)
             {
                 p.LoadProgressChanged += (s, e) =>
                 {
@@ -84,17 +83,23 @@ namespace MotivatorEngine
 
         public override AbstractDay CurrentDayIndexAlgorithm()
         {
-            var curDay = GetCurrentDay();
+            AbstractDay curDay = GetCurrentDay();
             // Set the correct date
             if (currentDayIndex == 0 && lastFinishDate == DateTime.MinValue)
             {
-                Console.WriteLine($">>>>>>>>>>>>>>>>>>>>> Beginning a new day : {currentDayIndex + 1}/{GetDays().Count}");
+                if (showCurrentDayIndexText)
+                {
+                    Console.WriteLine($">>>>>>>>>>>>>>>>>>>>> Beginning a new day : {currentDayIndex + 1}/{GetDays().Count}");
+                }
                 OnDayStarted(curDay);
             }
             else if (IsBeginningNewDay())
             {
                 currentDayIndex++;
-                Console.WriteLine($">>>>>>>>>>>>>>>>>>>>> Beginning a new day : {currentDayIndex + 1}/{GetDays().Count}");
+                if (showCurrentDayIndexText)
+                {
+                    Console.WriteLine($">>>>>>>>>>>>>>>>>>>>> Beginning a new day : {currentDayIndex + 1}/{GetDays().Count}");
+                }
                 OnDayStarted(curDay);
             }
 

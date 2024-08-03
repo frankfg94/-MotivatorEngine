@@ -381,7 +381,10 @@ namespace MotivatorEngine
             // Set the correct date
             if (currentDayIndex == 0 && lastFinishDate == DateTime.MinValue)
             {
-                Console.WriteLine($">>>>>>>>>>>>>>>>>>>>> Beginning the first day : {currentDayIndex + 1}/{GetDays().Count}");
+                if(showCurrentDayIndexText)
+                {
+                    Console.WriteLine($">>>>>>>>>>>>>>>>>>>>> Beginning the first day : {currentDayIndex + 1}/{GetDays().Count}");
+                }
                 OnDayStarted(curDay);
             }
             else if (IsBeginningNewDay())
@@ -389,7 +392,10 @@ namespace MotivatorEngine
                 if(preMenu.availableChoices.FindIndex((choice) => choice.keepIncrementingDay == true) > -1) {
                     currentDayIndex++;
                 }
-                Console.WriteLine($">>>>>>>>>>>>>>>>>>>>> Beginning a new day : {currentDayIndex + 1}/{GetDays().Count}");
+                if(showCurrentDayIndexText)
+                {
+                    Console.WriteLine($">>>>>>>>>>>>>>>>>>>>> Beginning a new day : {currentDayIndex + 1}/{GetDays().Count}");
+                }
                 OnDayStarted(curDay);
             }
 
