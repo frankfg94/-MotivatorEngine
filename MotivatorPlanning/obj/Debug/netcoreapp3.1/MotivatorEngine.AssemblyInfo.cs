@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MotivatorEngine")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+119854207aac5974309cd3f6322ec2c9c8820141")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7390c81f4527e0e18791cdabc4528780ee8a19c6")]
 [assembly: System.Reflection.AssemblyProductAttribute("MotivatorEngine")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MotivatorEngine")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

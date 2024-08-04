@@ -78,6 +78,7 @@ namespace MotivatorEngine
 
         public override AbstractPreMenu AskPostDayMenu(ref AbstractDay day)
         {
+            if (LOG_INFOS) { Console.WriteLine("[DEBUG]AskPostDayMenu"); }
             preMenu.isPostMenuOpen = true;
             var choices = preMenu.availableChoices.FindAll(x => x.count > 0 && x.ShowAfterDay());
             if (choices.Count == 0)

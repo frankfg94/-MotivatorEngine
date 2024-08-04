@@ -81,7 +81,7 @@ namespace MotivatorEngine.PreTask.Choices
                     // We want to start the next day directly without waiting
                     preMenu.planning.overrideTimeBeforeNewDay = TimeSpan.FromMilliseconds(1);
                 }
-                Console.WriteLine("Current day after skip  is now : " + (preMenu.planning.currentDayIndex+1));
+                Console.WriteLine("Current day after skip is now : " + (preMenu.planning.currentDayIndex+1));
             }
             else
             {
