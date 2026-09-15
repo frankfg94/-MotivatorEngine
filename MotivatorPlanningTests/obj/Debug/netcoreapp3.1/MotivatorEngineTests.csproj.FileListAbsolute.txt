@@ -1,4 +1,0 @@
-C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanningTests\obj\Debug\netcoreapp3.1\MotivatorEngineTests.csprojAssemblyReference.cache
-C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanningTests\obj\Debug\netcoreapp3.1\MotivatorEngineTests.AssemblyInfoInputs.cache
-C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanningTests\obj\Debug\netcoreapp3.1\MotivatorEngineTests.AssemblyInfo.cs
-C:\Users\franc\source\repos\MotivatorEngine\MotivatorPlanningTests\obj\Debug\netcoreapp3.1\MotivatorEngineTests.csproj.CoreCompileInputs.cache

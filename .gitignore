@@ -1,4 +1,17 @@
-MotivatorPlanning/bin/
-MotivatorPlanning/obj/
-*.exe
+# Visual Studio / .NET generated files
+.vs/
+**/[Bb]in/
+**/[Oo]bj/
+**/[Tt]est[Rr]esult*/
+**/[Aa]rtifacts/
+**/[Pp]ackages/
+
+# Generated binaries, symbols and build metadata
 *.dll
+*.exe
+*.pdb
+*.[Cc]ache
+*.deps.json
+*.runtimeconfig*.json
+*.coverage
+*.coveragexml
